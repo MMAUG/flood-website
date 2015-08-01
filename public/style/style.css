@@ -10,6 +10,10 @@
 /**
  * Application CSS
  */
+@font-face {
+	font-family:'Zawgyi-One';
+	src:local('Zawgyi-One'), url('fonts/zawgyi.woff') format('woff'), url('fonts/zawgyi.ttf') format('ttf');
+}
 html, body {
 	font-family: 'Zawgyi-One', "Helvetica","Arial",sans-serif;
 }
