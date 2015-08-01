@@ -4,22 +4,34 @@
 	<meta charset="UTF-8">
 	<title>Myanmar Flood Data</title>
 	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
 	
 	<div class="mdl-layout mdl-js-layout">
 		
-		<header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary" id="page-header">
-			<div class="mdl-layout__header-row">
-				<span class="mdl-layout-title">Myanmar Flood Data</span>
-				<div class="mdl-layout-spacer"></div>
-				<nav class="mdl-navigation ">
-					<a class="mdl-navigation__link" href="/">Donation Groups</a>
-					<a class="mdl-navigation__link" href="/news">News</a>
-					<a class="mdl-navigation__link" href="/form">Add Donation Group</a>
-				</nav>
-			</div>
-		</header> <!-- end of header -->
+		<header class="mdl-layout__header">
+		  <div class="mdl-layout__header-row">
+		    <!-- Title -->
+		    <span class="mdl-layout-title">Myanmar Flood Data</span>
+		    <!-- Add spacer, to align navigation to the right -->
+		    <div class="mdl-layout-spacer"></div>
+		    <!-- Navigation. We hide it in small screens. -->
+		    <nav class="mdl-navigation mdl-layout--large-screen-only">
+		      	<a class="mdl-navigation__link" href="/">Donation Groups</a>
+				<a class="mdl-navigation__link" href="/news">News</a>
+				<a class="mdl-navigation__link" href="/form">Add Donation Group</a>
+		    </nav>
+		  </div>
+		</header>
+		<div class="mdl-layout__drawer">
+		  <span class="mdl-layout-title">Myanmar Flood Data</span>
+		  <nav class="mdl-navigation">
+          	<a class="mdl-navigation__link" href="/">Donation Groups</a>
+    		<a class="mdl-navigation__link" href="/news">News</a>
+    		<a class="mdl-navigation__link" href="/form">Add Donation Group</a>
+		  </nav>
+		</div>
 
 		<main class="mdl-layout__content" id="main-container">
 
