@@ -1,7 +1,9 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-set :public_folder, "public"
+configure do
+  set :public_folder, File.dirname(__FILE__) + "/public"
+end
 
 get '/' do
   send_file File.join('index.html')

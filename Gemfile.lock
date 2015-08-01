@@ -27,7 +27,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rack
   sinatra
   sinatra-reloader
 
