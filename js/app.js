@@ -1,6 +1,7 @@
 var donationGroupURL = 'http://floodinfo-myanmar.herokuapp.com/api/donation_groups';
 var newsURL = 'http://floodinfo-myanmar.herokuapp.com/api/newsfeeds';
 
+// Donation group lists
 var donationGroup = new Vue({
 
   el: '#donation-groups',
@@ -23,6 +24,62 @@ var donationGroup = new Vue({
   }
 });
 
+// Add new donation group
+var newDonationGroup = new Vue({
+
+  el: '#new-donation-groups',
+
+  data: {
+    invalidTitle: false,
+    newIsPosting: false
+  },
+
+  methods: {
+    postGroup: function (e) {
+      e.preventDefault();
+
+      var title = this.title;
+
+      if ( title == '' || typeof title == 'undefined') {
+        this.invalidTitle = true;
+      }
+
+      // If validation fail, don't post to server
+      if ( this.invalidTitle) {
+        return true;
+      }
+
+      // Prepare post data
+      var postData = {
+        title: title,
+        description: this.description,
+        phone_numbers: this.phone_numbers,
+        donation_location: this.donation_location,
+        facebook_url: this.facebook_url
+      }
+
+      // Reset validation triggers
+      this.invalidTitle = false;
+
+      // Show posting loading...
+      this.newIsPosting = true;
+
+      this.$http.post(donationGroupURL + '/', postData, function(data, status, request) {
+        // Hide posting label...
+        this.newIsPosting = false;
+
+        // Redirect to home page.
+        document.location.href="/";
+
+      }, {emulateJSON: true}).error(function (data, status, request) {
+        alert('Error: Please try again to post your donation group...');
+      });
+    }
+  }
+
+});
+
+// News feed
 var newsfeeds = new Vue({
 
   el: '#new-feed',
