@@ -41,6 +41,7 @@
 				<nav class="mdl-navigation ">
 					<a class="mdl-navigation__link" href="/">Donation Groups</a>
 					<a class="mdl-navigation__link" href="news.html">News</a>
+					<a class="mdl-navigation__link" href="form.html">Add Donation Group</a>
 				</nav>
 			</div>
 		</header> <!-- end of header -->
@@ -55,12 +56,12 @@
 						<form action="#" method="POST">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 								<input class="mdl-textfield__input" type="text" id="title" v-model="title" />
-								<label class="mdl-textfield__label" for="sample3">Title</label>
+								<label class="mdl-textfield__label" for="title">Title</label>
 							</div>
 							<p class="error" v-if="invalidTitle">New title is required</p>
 							<div class="mdl-textfield mdl-js-textfield">
 								<textarea v-model="description" class="mdl-textfield__input" type="text" rows= "3" id="description" ></textarea>
-								<label class="mdl-textfield__label" for="sample5">Description</label>
+								<label class="mdl-textfield__label" for="description">Description</label>
 							</div>
 							<p class="error" v-if="invalidDescription">New description is required</p>
 							
