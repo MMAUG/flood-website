@@ -30,6 +30,9 @@ var newsfeeds = new Vue({
   data: {
     news: null,
     loading: true,
+    invalidTitle: false,
+    invalidDescription: false,
+    newIsPosting: false
   },
 
   ready: function() {
@@ -42,5 +45,45 @@ var newsfeeds = new Vue({
     }).error(function (data, status, request) {
 
     });
+  },
+
+  methods: {
+    postNew: function (e) {
+      e.preventDefault();
+
+      var title = this.title;
+      var description = this.description;
+
+      if ( title == '' || typeof title == 'undefined') {
+        this.invalidTitle = true;
+      }
+
+      if ( description == '' || typeof description == 'undefined') {
+       this.invalidDescription = true; 
+      }
+
+      // If validation fail, don't post to server
+      if ( this.invalidTitle || this.invalidDescription) {
+        return true;
+      }
+
+      // Reset validation triggers
+      this.invalidTitle = false;
+      this.invalidDescription = false;
+
+      // Show posting loading...
+      this.newIsPosting = true;
+      
+      this.$http.post(newsURL, {title: title, description: description}, function(data, status, request) {
+        // Hide posting label...
+        this.newIsPosting = false;
+
+        // Add server response data to current news data.
+        this.news.unshift(data);
+
+      }, {emulateJSON: true}).error(function (data, status, request) {
+        alert('Error: Please try again to post your new...');
+      });
+    }
   }
 });

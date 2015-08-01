@@ -18,9 +18,15 @@
 		#main-content {
 			max-width: 860px;
 		}
-		#page-title {
+		.page-title {
 			display: block;
 			width: 100%;
+		}
+		.mdl-textfield {
+			width: 100%;
+		}
+		.error {
+			color: #ff4081;
 		}
 	</style>
 </head>
@@ -43,9 +49,27 @@
 
 			<section class="section--center mdl-grid" id="main-content">
 
-				<h3 id="page-title">News</h3>
-
 				<div id="new-feed">
+					<h3 class="page-title">Post Flood New</h3>
+					<div>
+						<form action="#" method="POST">
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input class="mdl-textfield__input" type="text" id="title" v-model="title" />
+								<label class="mdl-textfield__label" for="sample3">Title</label>
+							</div>
+							<p class="error" v-if="invalidTitle">New title is required</p>
+							<div class="mdl-textfield mdl-js-textfield">
+								<textarea v-model="description" class="mdl-textfield__input" type="text" rows= "3" id="description" ></textarea>
+								<label class="mdl-textfield__label" for="sample5">Description</label>
+							</div>
+							<p class="error" v-if="invalidDescription">New description is required</p>
+							
+							<input type="submit" value="Post" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" v-on="click : postNew">
+							<span v-if="newIsPosting">Posting...</span>
+						</form>
+					</div>
+
+					<h3 class="page-title">News Feed</h3>
 					
 					<!-- Show loading text and hide after data are ready -->
 					<div id="loading" v-if="loading"><h4>Loading ...</h4></div>
