@@ -26,6 +26,17 @@ input, textarea, keygen, select, button {
 p {
 	color: rgba(0, 0, 0, 0.8);
 }
+#download {
+	max-width: 860px;
+	margin: 0 auto;
+	padding: 15px 10px 10px;
+}
+#download p {
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 0;
+	margin-top: 10px;
+}
 #page-header {
 	display: flex!important;
 }
@@ -33,9 +44,9 @@ p {
 	padding: 0;
 	height: 64px;
 }
-#main-container {
+/* #main-container {
 	padding-top: 48px;
-}
+} */
 #main-content {
 	max-width: 860px;
 }
