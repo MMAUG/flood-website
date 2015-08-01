@@ -23,6 +23,9 @@ h1, h2 {
 input, textarea, keygen, select, button {
 	font-family: 'Zawgyi-One', "Roboto","Helvetica","Arial",sans-serif;	
 }
+p {
+	color: rgba(0, 0, 0, 0.8);
+}
 #page-header {
 	display: flex!important;
 }
