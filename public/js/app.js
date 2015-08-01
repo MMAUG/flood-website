@@ -1,5 +1,6 @@
-var donationGroupURL = 'https://floodinfo-myanmar.herokuapp.com/api/donation_groups';
-var newsURL = 'https://floodinfo-myanmar.herokuapp.com/api/newsfeeds';
+var baseURL = 'https://floodinfo-myanmar.herokuapp.com/api/';
+var donationGroupURL = baseURL + 'donation_groups';
+var newsURL = baseURL + 'newsfeeds';
 
 // Donation group lists
 var donationGroup = new Vue({
@@ -140,6 +141,17 @@ var newsfeeds = new Vue({
 
       }, {emulateJSON: true}).error(function (data, status, request) {
         alert('Error: Please try again to post your new...');
+      });
+    },
+
+    reportNew: function (id) {
+        
+      var reportURL = newsURL + '/' + id + '/report_as_spam';
+      
+      this.$http.get(reportURL, function(data, status, request) {
+        alert('Thanks for your report');
+      }).error(function (data, status, request) {
+        alert('Error: Please try again to report...');
       });
     }
   }
