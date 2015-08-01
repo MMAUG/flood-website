@@ -1,5 +1,5 @@
-var donationGroupURL = 'http://floodinfo-myanmar.herokuapp.com/api/donation_groups';
-var newsURL = 'http://floodinfo-myanmar.herokuapp.com/api/newsfeeds';
+var donationGroupURL = 'https://floodinfo-myanmar.herokuapp.com/api/donation_groups';
+var newsURL = 'https://floodinfo-myanmar.herokuapp.com/api/newsfeeds';
 
 // Donation group lists
 var donationGroup = new Vue({
