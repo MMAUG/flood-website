@@ -43,7 +43,7 @@
 							<h5 v-if="donation_location">Address</h5>
 							<p class="group-address">{{ donation_location }}</p>
 						</div> <!-- end of div.mdl-card__supporting-text -->
-						<div class="mdl-card__actions mdl-card--border">
+						<div class="mdl-card__actions mdl-card--border" v-if="facebook_url">
 							<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
 							href="{{ facebook_url }}" target="_blank">
 								Facebook Url
