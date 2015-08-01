@@ -43,6 +43,10 @@ input, textarea, keygen, select, button {
 .mdl-textfield {
 	width: 100%;
 }
+
+.mdl-navigation__link {
+	font-size:16px;
+}
 .error {
 	color: #ff4081;
 }
