@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 </head>
-<body>
+<body data-page="news">
 	<div class="mdl-layout mdl-js-layout">
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 		<header class="mdl-layout__header">
@@ -48,7 +48,7 @@
 
 			<section class="section--center mdl-grid" id="main-content">
 
-				<div id="new-feed" class="mdl-cell mdl-cell--12-col">
+				<div id="new-feed" class="mdl-cell mdl-cell--12-col" >
 					<h3 class="page-title">Post Flood News</h3>
 					<div class="new-post-form">
 						<form action="#" method="POST">
@@ -86,9 +86,6 @@
 			      		</div>
 					</div>
 
-					<!-- Show loading text and hide after data are ready -->
-					<div id="loading" v-if="loading"><h4>Loading ...</h4></div>
-
 					<div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp" v-repeat="news" data-search="{{ title | lowercase }} : {{ description | lowercase }}">
 						<div class="mdl-card__title">
 							<h2 class="mdl-card__title-text">{{ title }}</h2>
@@ -103,6 +100,9 @@
 							</button>
 						</div>
 					</div> <!-- end of div.mdl-card -->
+
+          <!-- Show loading text and hide after data are ready -->
+          <div id="loading" v-if="loading"><h4>Loading ...</h4></div>
 
 				</div> <!-- end of div#donation-groups -->
 
