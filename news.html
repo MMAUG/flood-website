@@ -75,7 +75,7 @@
 					<!-- Show loading text and hide after data are ready -->
 					<div id="loading" v-if="loading"><h4>Loading ...</h4></div>
 
-					<div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp" v-repeat="news" data-search="{{ title }} : {{ description }}">
+					<div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp" v-repeat="news" data-search="{{ title | lowercase }} : {{ description | lowercase }}">
 						<div class="mdl-card__title">
 							<h2 class="mdl-card__title-text">{{ title }}</h2>
 						</div> <!-- end of div.mdl-card__title -->
