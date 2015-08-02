@@ -1,8 +1,9 @@
 'use strict';
 
 var gulp = require('gulp');
-var del = require('del');
+var del = require('del'); 
 var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 
 gulp.task('scripts', function() {
   return gulp.src([
@@ -10,9 +11,11 @@ gulp.task('scripts', function() {
   		'./public/js/material.min.js', 
   		'./public/js/vue.min.js',
   		'./public/js/vue-resource.min.js',
-  		'./public/js/knayi-myscript.js'
+  		'./public/js/knayi-myscript.js',
+  		'./public/js/app.js'
   	])
-    .pipe(concat('vendor.js'))
+  	.pipe(uglify())
+    .pipe(concat('app.min.js'))
     .pipe(gulp.dest('./public/js/'));
 });
 
