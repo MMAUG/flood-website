@@ -76,6 +76,9 @@ p {
 .error {
 	color: #ff4081;
 }
+.total {
+	width: 100%;
+}
 #donation-groups {
 	width: 100%;
 }

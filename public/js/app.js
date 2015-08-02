@@ -17,7 +17,7 @@ function closeModel() {
  * Original Source : https://gist.github.com/belsrc/672b75d1f89a9a5c192c
  */
 Vue.filter('truncate', function(value, length) {
-  console.log(length);
+
   if(value.length < length) {
     return value;
   }
@@ -34,6 +34,7 @@ var donationGroup = new Vue({
 
   data: {
     groups: null,
+    total: null,
     loading: true,
   },
 
@@ -42,6 +43,8 @@ var donationGroup = new Vue({
   	this.$http.get(donationGroupURL, function (data, status, request) {
   		// Set groups data from api response data.
   		this.$set('groups', data);
+      // Set total groups
+      this.$set('total', data.length);
       // Set loading is false
       this.$set('loading', false);
   	}).error(function (data, status, request) {
