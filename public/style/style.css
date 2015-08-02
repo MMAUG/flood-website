@@ -54,9 +54,6 @@ p {
 	display: block;
 	width: 100%;
 }
-.mdl-textfield {
-	width: 100%;
-}
 .mdl-navigation__link {
 	font-size:16px;
 }
@@ -111,6 +108,12 @@ p {
     align-items: center;
 }
 .new-post-form {
+	width: 100%;
+}
+.news-label-message {
+	font-size: 18px;
+}
+.new-input {
 	width: 100%;
 }
 

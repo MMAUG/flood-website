@@ -54,12 +54,12 @@
 					<h3 class="page-title">Post Flood News</h3>
 					<div class="new-post-form">
 						<form action="#" method="POST">
-							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label new-input">
 								<input class="mdl-textfield__input" type="text" id="title" v-model="title" />
 								<label class="mdl-textfield__label" for="title">Title</label>
 							</div>
 							<p class="error" v-if="invalidTitle">New title is required</p>
-							<div class="mdl-textfield mdl-js-textfield">
+							<div class="mdl-textfield mdl-js-textfield new-input">
 								<textarea v-model="description" class="mdl-textfield__input" type="text" rows= "3" id="description" ></textarea>
 								<label class="mdl-textfield__label" for="description">Description</label>
 							</div>

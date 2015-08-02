@@ -2,31 +2,33 @@ var baseURL = 'https://floodinfo-myanmar.herokuapp.com/api/';
 var donationGroupURL = baseURL + 'donation_groups';
 var newsURL = baseURL + 'newsfeeds';
 
-$("#search-at-header").on('keyup', function(event){
-  var that = $(this);
-  var type = that.val();
+if (typeof $ != 'undefined') {
+  $("#search-at-header").on('keyup', function(event){
+    var that = $(this);
+    var type = that.val();
 
-  // Make lower case
-  type = type.toString().toLowerCase();
+    // Make lower case
+    type = type.toString().toLowerCase();
 
-  $("#donation-groups .mdl-card").each(function(index, card){
-    card = $(card);
-    if( !card.attr("data-search").match(type, "g") ) {
-      card.hide(400);
-    } else {
-      card.show(400);
-    }
+    $("#donation-groups .mdl-card").each(function(index, card){
+      card = $(card);
+      if( !card.attr("data-search").match(type, "g") ) {
+        card.hide(400);
+      } else {
+        card.show(400);
+      }
+    });
+
+    $("#new-feed .mdl-card").each(function(index, card){
+      card = $(card);
+      if( !card.attr("data-search").match(type, "g") ) {
+        card.hide(400);
+      } else {
+        card.show(400);
+      }
+    });
   });
-
-  $("#new-feed .mdl-card").each(function(index, card){
-    card = $(card);
-    if( !card.attr("data-search").match(type, "g") ) {
-      card.hide(400);
-    } else {
-      card.show(400);
-    }
-  });
-});
+}
 
 /**
  * JQuery Helper functions
