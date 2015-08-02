@@ -29,6 +29,7 @@
       	    <nav class="mdl-navigation">
       	      	<a class="mdl-navigation__link is-active" href="/">Donation Groups</a>
       			<a class="mdl-navigation__link" href="/news">News</a>
+      			<a class="mdl-navigation__link" href="/flood_locations">Flooded Locations</a>
       	    </nav>
 		  </div>
 		</header>
@@ -69,11 +70,11 @@
 					</div>
 
 					<!-- Filter Serach -->
-					<div class="mdl-cell mdl-cell--6-col">
+					<div class="mdl-cell--6-col">
 						<h3 class="page-title">News Feed</h3>
 					</div>
 
-					<div class="mdl-cell mdl-cell--6-col filter-container">
+					<div class="mdl-cell--6-col filter-container">
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
 			                  mdl-textfield--floating-label mdl-textfield--align-right">
 			        		<label class="mdl-button mdl-js-button mdl-button--icon"
@@ -85,7 +86,7 @@
 				        	</div>
 			      		</div>
 					</div>
-
+          
 					<div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp" v-repeat="news" data-search="{{ title | lowercase }} : {{ description | lowercase }}">
 						<div class="mdl-card__title">
 							<h2 class="mdl-card__title-text">{{ title }}</h2>
@@ -102,7 +103,12 @@
 					</div> <!-- end of div.mdl-card -->
 
           <!-- Show loading text and hide after data are ready -->
-          <div id="loading" v-if="loading"><h4>Loading ...</h4></div>
+          <div id="loading" v-if="loading">
+            <!-- http://codepen.io/jczimm/pen/vEBpoL -->
+            <svg class="circular">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+          </div>
 
 				</div> <!-- end of div#donation-groups -->
 
