@@ -713,7 +713,7 @@ knayi.extend({
 		}
 		// Return when Target font and Current font are same type
 		if ( from == to ){
-			console.error("Convert target font and current font are same");
+			//console.error("Convert target font and current font are same");
 			return content;
 		}
 
