@@ -52,7 +52,7 @@
 
 				<div id="new-feed" class="mdl-grid">
 					<h3 class="page-title">Post Flood News</h3>
-					<div>
+					<div class="new-post-form">
 						<form action="#" method="POST">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 								<input class="mdl-textfield__input" type="text" id="title" v-model="title" />
@@ -75,7 +75,7 @@
 					<!-- Show loading text and hide after data are ready -->
 					<div id="loading" v-if="loading"><h4>Loading ...</h4></div>
 
-					<div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp" v-repeat="news" data-search="{{ title | lowercase }} : {{ description | lowercase }}">
+					<div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp" v-repeat="news" data-search="{{ title | lowercase }} : {{ description | lowercase }}">
 						<div class="mdl-card__title">
 							<h2 class="mdl-card__title-text">{{ title }}</h2>
 						</div> <!-- end of div.mdl-card__title -->

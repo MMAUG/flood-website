@@ -54,6 +54,9 @@ p {
 	display: block;
 	width: 100%;
 }
+.mdl-textfield {
+	width: 100%;
+}
 .mdl-navigation__link {
 	font-size:16px;
 }
@@ -106,7 +109,10 @@ p {
     display: flex;
     box-sizing:border-box;
     align-items: center;
-  }
+}
+.new-post-form {
+	width: 100%;
+}
 
 /**
  * Modal Box Styles
