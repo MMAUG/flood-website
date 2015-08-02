@@ -189,3 +189,12 @@ p {
 	background: #000;
 	will-change: opacity;
 }
+
+/* Media Query */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 800px) {
+  	.modal {
+  		width: 90%;
+  	}
+}
