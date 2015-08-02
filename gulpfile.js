@@ -4,6 +4,11 @@ var gulp = require('gulp');
 var del = require('del');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var watch = require('gulp-watch');
+
+gulp.task('watch', function(){
+  gulp.watch("./public/js/*", ['scripts']);
+});
 
 gulp.task('scripts', function() {
   return gulp.src([
@@ -20,4 +25,6 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('./public/js/'));
 });
 
-gulp.task('default', ['scripts']);
+gulp.task('default', ['scripts', 'watch']);
+
+gulp.task('production', ['scripts']);
