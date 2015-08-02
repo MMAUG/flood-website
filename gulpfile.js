@@ -18,7 +18,8 @@ gulp.task('scripts', function() {
   		'./public/js/vue-resource.min.js',
   		'./public/js/knayi-myscript.js',
       './public/js/search.js',
-  		'./public/js/app.js'
+  		'./public/js/app.js',
+      './public/js/floods_map.js'
   	])
   	.pipe(uglify())
     .pipe(concat('app.min.js'))
