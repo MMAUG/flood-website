@@ -138,6 +138,10 @@ p {
 	width: 100%;
 }
 
+#new-donation-groups .mdl-textfield {
+	width: 100%;
+}
+
 /**
  * Modal Box Styles
  * Modal box is inspire on http://materializecss.com/modals.html
