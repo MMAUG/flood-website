@@ -2,6 +2,29 @@ var baseURL = 'https://floodinfo-myanmar.herokuapp.com/api/';
 var donationGroupURL = baseURL + 'donation_groups';
 var newsURL = baseURL + 'newsfeeds';
 
+$("#search-at-header").on('keyup', function(event){
+  var that = $(this);
+  var type = that.val();
+
+  $("#donation-groups .mdl-card").each(function(index, card){
+    card = $(card);
+    if( !card.attr("data-search").match(type, "g") ) {
+      card.hide(400);
+    } else {
+      card.show(400);
+    }
+  });
+
+  $("#new-feed .mdl-card").each(function(index, card){
+    card = $(card);
+    if( !card.attr("data-search").match(type, "g") ) {
+      card.hide(400);
+    } else {
+      card.show(400);
+    }
+  });
+});
+
 /**
  * JQuery Helper functions
  */
@@ -96,7 +119,7 @@ var newDonationGroup = new Vue({
 
       var title = this.title;
 
-      if ( title == '' || typeof title == 'undefined') {
+      if ( title === '' || typeof title === 'undefined') {
         this.invalidTitle = true;
       }
 
@@ -112,7 +135,7 @@ var newDonationGroup = new Vue({
         phone_numbers: this.phone_numbers,
         donation_location: this.donation_location,
         facebook_url: this.facebook_url
-      }
+      };
 
       // Reset validation triggers
       this.invalidTitle = false;
@@ -167,12 +190,12 @@ var newsfeeds = new Vue({
       var title = this.title;
       var description = this.description;
 
-      if ( title == '' || typeof title == 'undefined') {
+      if ( title === '' || typeof title === 'undefined') {
         this.invalidTitle = true;
       }
 
-      if ( description == '' || typeof description == 'undefined') {
-       this.invalidDescription = true; 
+      if ( description === '' || typeof description === 'undefined') {
+       this.invalidDescription = true;
       }
 
       // If validation fail, don't post to server
@@ -186,7 +209,7 @@ var newsfeeds = new Vue({
 
       // Show posting loading...
       this.newIsPosting = true;
-      
+
       this.$http.post(newsURL, {title: title, description: description}, function(data, status, request) {
         // Hide posting label...
         this.newIsPosting = false;
@@ -200,9 +223,9 @@ var newsfeeds = new Vue({
     },
 
     reportNew: function (id) {
-        
+
       var reportURL = newsURL + '/' + id + '/report_as_spam';
-      
+
       this.$http.get(reportURL, function(data, status, request) {
         alert('Thanks for your report');
       }).error(function (data, status, request) {

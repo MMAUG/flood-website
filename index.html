@@ -8,17 +8,26 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 </head>
 <body>
-	
+	<div class="mdl-layout mdl-js-layout">
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-		
 		<header class="mdl-layout__header">
 		  <div class="mdl-layout__header-row">
 		    <!-- Title -->
 		    <span class="mdl-layout-title">Myanmar Flood Infomation</span>
 		    <!-- Add spacer, to align navigation to the right -->
 		    <div class="mdl-layout-spacer"></div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+	                  mdl-textfield--floating-label mdl-textfield--align-right">
+	        <label class="mdl-button mdl-js-button mdl-button--icon"
+	               for="search-at-header">
+	          <i class="material-icons">search</i>
+	        </label>
+	        <div class="mdl-textfield__expandable-holder">
+	          <input class="mdl-textfield__input" type="text" name="sample" id="search-at-header" />
+	        </div>
+	      </div>
 		    <!-- Navigation. We hide it in small screens. -->
-		    <p class="app-download-link mdl-color-text--white mdl-layout--large-screen-only">Download Android App from <a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Play Store</a> or Direct 
+		    <p class="app-download-link mdl-color-text--white mdl-layout--large-screen-only">Download Android App from <a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Play Store</a> or Direct
 				<a href="https://goo.gl/CxXzyH">Download Link</a></p>
 		  </div>
 		  <div class="mdl-layout__header-row mdl-layout--large-screen-only" id="nav-second-header">
@@ -47,13 +56,13 @@
 				<h3 class="page-title">Donation Group Lists</h3>
 
 				<div id="donation-groups" class="mdl-grid">
-					
+
 					<!-- Show loading text and hide after data are ready -->
 					<div id="loading" v-if="loading"><h4>Loading ...</h4></div>
 
 					<h5 class="total" v-if="total">We collect {{ total }} donation group lists.</h5>
 
-					<div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp" v-repeat="groups">
+					<div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp" v-repeat="groups" data-search="{{ title }} : {{ description }} : {{ donation_location }}">
 						<div class="mdl-card__title mdl-card--expand">
 							<h2 class="mdl-card__title-text">{{ title }}</h2>
 						</div> <!-- end of div.mdl-card__title -->
@@ -61,28 +70,28 @@
 						<div class="mdl-card__supporting-text">
 							<p class="group-description">{{ description | truncate 100 }}</p>
 						</div>
-						
+
 						<div class="mdl-card__actions mdl-card--border">
 							<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
 							href="{{ facebook_url }}" target="_blank" v-if="facebook_url">
 								Facebook Url
 							</a>
 							<div class="mdl-layout-spacer"></div>
-							
+
 							<button class="mdl-button mdl-js-button mdl-button--icon show-info" v-on="click : showDetailBox(description, phone_numbers, donation_location)">
 								<i class="material-icons">info</i>
 							</button>
 						</div> <!-- end of div.mdl-card__actions -->
 					</div> <!-- end of div.mdl-card -->
-					
+
 				</div> <!-- end of div#donation-groups -->
 
 			</section> <!-- end of section#main-content -->
-			
+
 		</main> <!-- end of #main-container -->
 
 	</div> <!-- end of div.mdl-layout -->
-	
+
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/material.min.js"></script>
 	<script src="js/vue.min.js"></script>

@@ -21,7 +21,7 @@ h1, h2 {
 	font-family: 'Zawgyi-One', "Roboto","Helvetica","Arial",sans-serif;
 }
 input, textarea, keygen, select, button {
-	font-family: 'Zawgyi-One', "Roboto","Helvetica","Arial",sans-serif;	
+	font-family: 'Zawgyi-One', "Roboto","Helvetica","Arial",sans-serif;
 }
 p {
 	color: rgba(0, 0, 0, 0.8);
@@ -44,9 +44,9 @@ p {
 	padding: 0;
 	height: 64px;
 }
-/* #main-container {
+ #main-container {
 	padding-top: 48px;
-} */
+}
 #main-content {
 	max-width: 860px;
 }
@@ -54,10 +54,6 @@ p {
 	display: block;
 	width: 100%;
 }
-.mdl-textfield {
-	width: 100%;
-}
-
 .mdl-navigation__link {
 	font-size:16px;
 }
