@@ -8,9 +8,8 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 </head>
 <body>
-
 	<div class="mdl-layout mdl-js-layout">
-
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 		<header class="mdl-layout__header">
 		  <div class="mdl-layout__header-row">
 		    <!-- Title -->
@@ -28,15 +27,18 @@
 	        </div>
 	      </div>
 		    <!-- Navigation. We hide it in small screens. -->
-		    <p class="app-download-link">Download Android App from <a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Play Store</a> or Direct
+		    <p class="app-download-link mdl-color-text--white mdl-layout--large-screen-only">Download Android App from <a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Play Store</a> or Direct
 				<a href="https://goo.gl/CxXzyH">Download Link</a></p>
 		  </div>
-		  <div class="mdl-layout__header-row" style="background-color:#3949ab;">
-	  	    <nav class="mdl-navigation mdl-layout--large-screen-only">
+		  <div class="mdl-layout__header-row mdl-layout--large-screen-only" id="nav-second-header">
+	  	    <nav class="mdl-navigation">
 	  	      	<a class="mdl-navigation__link is-active" href="/">Donation Groups</a>
 	  			<a class="mdl-navigation__link" href="/news">News</a>
-	  			<a class="mdl-navigation__link" href="/form">Add Donation Group</a>
 	  	    </nav>
+	  	    <a href="/form" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" id="add-donation-gp-btn">
+	  	      <i class="material-icons mdl-color-text--white" role="presentation">add</i>
+	  	      <span class="visuallyhidden">add</span>
+	  	    </a>
 		  </div>
 		</header>
 		<div class="mdl-layout__drawer">
@@ -47,7 +49,6 @@
     		<a class="mdl-navigation__link" href="/form">Add Donation Group</a>
 		  </nav>
 		</div>
-
 		<main class="mdl-layout__content" id="main-container">
 
 			<section class="section--center mdl-grid" id="main-content">
@@ -59,8 +60,9 @@
 					<!-- Show loading text and hide after data are ready -->
 					<div id="loading" v-if="loading"><h4>Loading ...</h4></div>
 
-					<div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp" v-repeat="groups" data-search="{{ title }} : {{ description }} : {{ donation_location }}">
+					<h5 class="total" v-if="total">We collect {{ total }} donation group lists.</h5>
 
+					<div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp" v-repeat="groups" data-search="{{ title }} : {{ description }} : {{ donation_location }}">
 						<div class="mdl-card__title mdl-card--expand">
 							<h2 class="mdl-card__title-text">{{ title }}</h2>
 						</div> <!-- end of div.mdl-card__title -->
