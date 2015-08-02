@@ -51,7 +51,7 @@ var donationGroup = new Vue({
 
   methods: {
     showDetailBox: function(description, phone_numbers, donation_location) {
-      var template = '<div class="modal-2 mdl-shadow--2dp" id="group-modal">' +
+      var template = '<div class="modal mdl-shadow--2dp" id="group-modal">' +
                         '<div class="modal-content">' +
                           '<h4>Description</h4>' +
                           '<p>' + description + '</p>' +
