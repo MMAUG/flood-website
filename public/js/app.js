@@ -217,6 +217,8 @@ var newsfeeds = new Vue({
         // Add server response data to current news data.
         this.news.unshift(data);
 
+        document.location.reload();
+
       }, {emulateJSON: true}).error(function (data, status, request) {
         alert('Error: Please try again to post your new...');
       });
