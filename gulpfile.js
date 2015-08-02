@@ -13,6 +13,7 @@ gulp.task('watch', function(){
 gulp.task('scripts', function() {
   return gulp.src([
   		'./public/js/jquery-1.11.3.min.js',
+      './public/js/moment.js',
   		'./public/js/material.min.js',
   		'./public/js/vue.min.js',
   		'./public/js/vue-resource.min.js',
