@@ -6,7 +6,8 @@ This is web version of FloodInfo Android Application.
 Credits
 --------
 
-- Modal box is inspire on http://materializecss.com/modals.html
+- Modal box is inspire on [http://materializecss.com/modals.html](http://materializecss.com/modals.html)
+- Material Design Loading Spinner [http://codepen.io/mrrocks/pen/EiplA](http://codepen.io/mrrocks/pen/EiplA)
 
 
 Development
