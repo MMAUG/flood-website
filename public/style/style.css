@@ -75,6 +75,12 @@ p {
 	text-align: right;
 }
 
+.drawer-separator {
+	height: 1px;
+	background-color: #DCDCDC;
+	margin: 8px 0;
+}
+
 .app-download-link a {
 	color: #81D4FA;
 }
