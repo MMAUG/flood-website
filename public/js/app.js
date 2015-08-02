@@ -25,6 +25,10 @@ Vue.filter('truncate', function(value, length) {
   return value.substring(0, length) + '...';
 });
 
+Vue.filter('moment', function(value){
+  return moment(value).startOf('hour').fromNow();
+});
+
 // Donation group lists
 var donationGroup = new Vue({
 
@@ -86,9 +90,9 @@ var donationGroup = new Vue({
         this.$set("nextPage", nextPage + 1);
 
         data = data.map(function(info){
-          info.title = kny.fontConvert(info.title, "unicode5");
-          info.description = kny.fontConvert(info.description, "unicode5");
-          info.donation_location = kny.fontConvert(info.donation_location, "unicode5");
+          info.title = kny.syllbreak( kny.fontConvert(info.title, "unicode5"), "unicode5");
+          info.description = kny.syllbreak( kny.fontConvert(info.description, "unicode5"), "unicode5");
+          info.donation_location = kny.syllbreak( kny.fontConvert(info.donation_location, "unicode5"), "unicode5");
           return info;
         });
 
@@ -99,9 +103,7 @@ var donationGroup = new Vue({
         this.$set('total', data.length);
         // Set loading is false
         this.$set('loading', false);
-      }).error(function (data, status, request) {
-
-      });
+      }).error(function (data, status, request) {});
     }
   }
 });
@@ -251,8 +253,8 @@ var newsfeeds = new Vue({
         this.$set("nextPage", nextPage + 1);
 
         data = data.map(function(info){
-          info.title = kny.fontConvert(info.title, "unicode5");
-          info.description = kny.fontConvert(info.description, "unicode5");
+          info.title = kny.syllbreak( kny.fontConvert(info.title, "unicode5"), "unicode5");
+          info.description = kny.syllbreak( kny.fontConvert(info.description, "unicode5"), "unicode5");
           return info;
         });
 
@@ -261,9 +263,7 @@ var newsfeeds = new Vue({
         this.$set('news', data);
         // Set loading is false
         this.$set('loading', false);
-      }).error(function (data, status, request) {
-
-      });
+      }).error(function (data, status, request) {});
     }
   }
 });
