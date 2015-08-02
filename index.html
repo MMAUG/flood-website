@@ -51,6 +51,8 @@
 					<!-- Show loading text and hide after data are ready -->
 					<div id="loading" v-if="loading"><h4>Loading ...</h4></div>
 
+					<h5 class="total" v-if="total">We collect {{ total }} donation group lists.</h5>
+
 					<div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp" v-repeat="groups">
 						<div class="mdl-card__title mdl-card--expand">
 							<h2 class="mdl-card__title-text">{{ title }}</h2>
