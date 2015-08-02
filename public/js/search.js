@@ -4,7 +4,8 @@ var alias = [
   ["bago", "ပဲခူး"],
   ["rakhing", "ရခိုင်"],
   ["kayin", "ကရင်"],
-  ["ayeyarwaddy", "ဧရာ၀တီ", "ဧရာဝတီ"]
+  ["ayeyarwaddy", "ဧရာ၀တီ", "ဧရာဝတီ"],
+  ["tanaintharyi", "တနင်္သာရီ"]
 ];
 
 $("#search-at-header").on('keyup', function(event){
