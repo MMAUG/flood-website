@@ -10,6 +10,7 @@ gulp.task('scripts', function() {
   		'./public/js/material.min.js', 
   		'./public/js/vue.min.js',
   		'./public/js/vue-resource.min.js',
+  		'./public/js/knayi-myscript.js'
   	])
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('./public/js/'));
