@@ -67,9 +67,20 @@ p {
 }
 
 .app-download-link {
-	color: #fff;
 	margin-top: 20px;
 }
+
+#nav-second-header {
+	background-color: #3949ab;
+	position: relative;
+}
+
+#add-donation-gp-btn {
+	position: absolute;
+	right: 30px;
+	top: 35px;
+}
+
 .app-download-link a {
 	color: #81D4FA;
 }

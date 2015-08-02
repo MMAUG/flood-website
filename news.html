@@ -9,7 +9,7 @@
 </head>
 <body>
 	
-	<div class="mdl-layout mdl-js-layout">
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 		
 		<header class="mdl-layout__header">
 		  <div class="mdl-layout__header-row">
@@ -18,15 +18,14 @@
 		    <!-- Add spacer, to align navigation to the right -->
 		    <div class="mdl-layout-spacer"></div>
 		    <!-- Navigation. We hide it in small screens. -->
-		    <p class="app-download-link">Download Android App from <a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Play Store</a> or Direct 
-				<a href="https://goo.gl/CxXzyH">Download Link</a></p>
-		  </div>
-		  <div class="mdl-layout__header-row" style="background-color:#3949ab;">
-	  	    <nav class="mdl-navigation mdl-layout--large-screen-only">
-	  	      	<a class="mdl-navigation__link is-active" href="/">Donation Groups</a>
-	  			<a class="mdl-navigation__link" href="/news">News</a>
-	  			<a class="mdl-navigation__link" href="/form">Add Donation Group</a>
-	  	    </nav>
+    	    <p class="app-download-link mdl-color-text--white mdl-layout--large-screen-only">Download Android App from <a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Play Store</a> or Direct 
+    			<a href="https://goo.gl/CxXzyH">Download Link</a></p>
+    	  </div>
+    	  <div class="mdl-layout__header-row mdl-layout--large-screen-only" id="nav-second-header">
+      	    <nav class="mdl-navigation">
+      	      	<a class="mdl-navigation__link is-active" href="/">Donation Groups</a>
+      			<a class="mdl-navigation__link" href="/news">News</a>
+      	    </nav>
 		  </div>
 		</header>
 		<div class="mdl-layout__drawer">
