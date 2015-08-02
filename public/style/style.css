@@ -305,3 +305,16 @@ p {
   		width: 90%;
   	}
 }
+
+.mdl-card__time {
+  font-size: 14px;
+  float: right;
+}
+
+.mdl-title-box {
+  margin: 0px 8px;
+  padding: 0px 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
