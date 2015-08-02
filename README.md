@@ -3,6 +3,11 @@ Website for Myanmar Flood 2015 07/08
 
 This is web version of FloodInfo Android Application.
 
+Credits
+--------
+
+- Modal box is inspire on http://materializecss.com/modals.html
+
 
 Development
 -----------

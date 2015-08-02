@@ -2,6 +2,31 @@ var baseURL = 'https://floodinfo-myanmar.herokuapp.com/api/';
 var donationGroupURL = baseURL + 'donation_groups';
 var newsURL = baseURL + 'newsfeeds';
 
+/**
+ * JQuery Helper functions
+ */
+function closeModel() {
+  $('#overlay').remove();
+  $('#group-modal').remove();
+}
+
+/**
+ * Vue filter to truncate a string to the specified length.
+ * @param {String} value The value string.
+ *
+ * Original Source : https://gist.github.com/belsrc/672b75d1f89a9a5c192c
+ */
+Vue.filter('truncate', function(value, length) {
+  console.log(length);
+  if(value.length < length) {
+    return value;
+  }
+
+  length = length - 3;
+
+  return value.substring(0, length) + '...';
+});
+
 // Donation group lists
 var donationGroup = new Vue({
 
@@ -22,6 +47,33 @@ var donationGroup = new Vue({
   	}).error(function (data, status, request) {
 
   	});
+  },
+
+  methods: {
+    showDetailBox: function(description, phone_numbers, donation_location) {
+      var template = '<div class="modal-2 mdl-shadow--2dp" id="group-modal">' +
+                        '<div class="modal-content">' +
+                          '<h4>Description</h4>' +
+                          '<p>' + description + '</p>' +
+                          '<h4>Phone Numbers</h4>' +
+                          '<p>'+ phone_numbers + '</p>' +
+                          '<h4>Location</h4>' +
+                          '<p>'+ donation_location + '</p>' +
+                        '</div>' +
+                        '<div class="modal-footer">' +
+                          '<button class="mdl-button mdl-js-button" id="close-modal">' +
+                            'Close' +
+                          '</button>' +
+                        '</div>' +
+                      '</div>';
+      var b = $('body');
+      b.append(template);
+      b.append('<div id="overlay"></div>');
+
+      $('#close-modal').on('click', function() {
+        closeModel();
+      });
+    }
   }
 });
 

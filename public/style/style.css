@@ -64,3 +64,86 @@ p {
 .error {
 	color: #ff4081;
 }
+#donation-groups {
+	width: 100%;
+}
+
+#donation-groups .mdl-card__title {
+  -webkit-box-align: start;
+  -webkit-align-items: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+#donation-groups .mdl-card__title-text {
+	-webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  font-size: 18px;
+}
+#donation-groups .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+  }
+
+/**
+ * Modal Box Styles
+ * Modal box is inspire on http://materializecss.com/modals.html
+ */
+.modal {
+	position: fixed;
+	left: 0;
+	right: 0;
+	background-color: #fafafa;
+	padding: 0;
+	height: 70%;
+	max-height: 70%;
+	width: 55%;
+	margin: auto;
+	overflow-y: auto;
+	border-radius: 2px;
+	z-index: 1003;
+	display: block;
+	transform: scaleX(1);
+	top: 10%;
+}
+.modal .modal-content {
+	padding: 24px;
+	position: absolute;
+	height: calc(100% - 56px);
+	max-height: 100%;
+	width: 100%;
+ 	overflow-y: auto;
+ 	box-sizing: border-box;
+}
+.modal .modal-content h4 {
+	font-size: 18px;
+	margin: 16px 16px 16px 0;
+}
+.modal .modal-footer {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 0 0 2px 2px;
+	background-color: #fafafa;
+	padding: 4px 6px;
+	height: 56px;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: right;
+	position: absolute;
+	bottom: 0;
+}
+
+#overlay {
+	z-index: 1002;
+	display: block;
+	opacity: 0.5;
+	position: fixed;
+	top: -100px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 125%;
+	width: 100%;
+	background: #000;
+	will-change: opacity;
+}
