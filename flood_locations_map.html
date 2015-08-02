@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Myanmar Flood Information</title>
+  <meta name="description" content="ေရေဘး သတင္းေတြ ဖတ္ခ်င္တာပဲျဖစ္ျဖစ္၊ ကိုယ္တိုင္ သတင္းေတြ၀ေ မၽွခ်င္တာပဲျဖစ္ျဖစ္ တစ္ေနရာထဲမွာ အလြယ္တကူ ဖတ္လို႔၊ share လို႔ရပါၿပီ။ ဒါ့အျပင္ ကိုယ္တိုင္လွူဒါန္းခ်င္တဲ့သူေတြအတြက္ ဆက္သြယ္လို႔ရမဲ့ အဖြဲ႕ ေတြရဲ့ လိပ္စာေတြ၊ ဖုန္းနံပါတ္ေတြလည္းပါ၀င္ပါတယ္။ ကိုယ္တိုင္လည္း အဖြဲ႕အသစ္ေတြကို ထည့္သြင့္းေပးလို႔ရပါတယ္။">
+  <meta name="keywords" content="myanmar,myanmar-flood,flood-2015">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Myanmar Flood Information</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+
+          <!-- Navigation. We hide it in small screens. -->
+          <p class="app-download-link mdl-color-text--white mdl-layout--large-screen-only">Download Android App from <a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Play Store</a> or Direct
+          <a href="https://goo.gl/CxXzyH">Download Link</a></p>
+        </div>
+        <div class="mdl-layout__header-row mdl-layout--large-screen-only" id="nav-second-header">
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link is-active" href="/">Donation Groups</a>
+            <a class="mdl-navigation__link" href="/news">News</a>
+            </nav>
+            <a href="/form" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent" id="add-donation-gp-btn">
+              <i class="material-icons mdl-color-text--white" role="presentation">add</i>
+              <span class="visuallyhidden">add</span>
+            </a>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Myanmar Flood Data</span>
+        <nav class="mdl-navigation">
+              <a class="mdl-navigation__link" href="/">Donation Groups</a>
+          <a class="mdl-navigation__link" href="/news">News</a>
+          <a class="mdl-navigation__link" href="/form">Add Donation Group</a>
+          <div class="drawer-separator"></div>
+          <a class="mdl-navigation__link" target="_blank" href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Get it on Play Store</a>
+          <a class="mdl-navigation__link" target="_blank" href="https://goo.gl/CxXzyH">Direct Download Link</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content" id="main-container">
+
+        <section class="section--center mdl-grid" id="main-content">
+          <div id="map" style="height: 768px; width: 1025px;"></div>
+        </section> <!-- end of section#main-content -->
+
+      </main> <!-- end of #main-container -->
+
+    </div> <!-- end of div.mdl-layout -->
+<script type="text/javascript">
+
+    var locationJSON = '[{"District":"Shwebo","Township":"Kanbalu","longitude":95.51886,"latitude":23.203053,"Type ":"Township"},{"District":"Katha","Township":"Kawlin","longitude":95.683388,"latitude":23.790258,"Type ":"Township"},{"District":"Shwebo","Township":"Wetlet","longitude":95.788116,"latitude":22.367149,"Type ":"Township"},{"District":"Taunggyi","Township":"Kalaw","longitude":96.55864,"latitude":20.624178,"Type ":"Township"},{"District":"Mohnyin","Township":"Mogaung","longitude":96.940384,"latitude":25.302744,"Type ":"Township"},{"District":"Shwebo","Township":"Ye-U","longitude":95.430489,"latitude":22.76914,"Type ":"Township"},{"District":"Katha","Township":"Indaw","longitude":96.14167,"latitude":24.222515,"Type ":"Township"},{"District":"Shwebo","Township":"Kyunhla","longitude":95.532097,"latitude":23.319637,"Type ":"Township"},{"District":"Kyaukme","Township":"Mongmit","longitude":96.669991,"latitude":23.11422,"Type ":"Township"},{"District":"Monywa","Township":"Monywa","longitude":95.139633,"latitude":22.121679,"Type ":"Township"},{"District":"Monywa","Township":"Ayadaw","longitude":95.447159,"latitude":22.28525,"Type ":"Township"},{"District":"Kyaukme","Township":"Hsipaw","longitude":97.298103,"latitude":22.618938,"Type ":"Township"},{"District":"Shwebo","Township":"Khin-U","longitude":95.62149,"latitude":22.770161,"Type ":"Township"},{"District":"Mohnyin","Township":"Mohnyin","longitude":96.373198,"latitude":24.779057,"Type ":"Township"},{"District":"Monywa","Township":"Budalin","longitude":95.144699,"latitude":22.387771,"Type ":"Township"},{"District":"Maungdaw","Township":"Buthidaung","longitude":92.525,"latitude":20.874975,"Type ":"Township"},{"District":"Hpa-An","Township":"Hlaingbwe","longitude":97.81871,"latitude":17.12574,"Type ":"Township"},{"District":"Sittwe","Township":"Kyauktaw","longitude":92.97282,"latitude":20.843957,"Type ":"Township"},{"District":"Sittwe","Township":"Minbya","longitude":93.27269,"latitude":20.364523,"Type ":"Township"},{"District":"Kale","Township":"Mingin","longitude":94.490858,"latitude":22.879561,"Type ":"Township"},{"District":"Pyinoolwin","Township":"Mogoke","longitude":96.505402,"latitude":22.921391,"Type ":"Township"},{"District":"Pyinoolwin","Township":"Thabeikkyin","longitude":95.97525,"latitude":22.885933,"Type ":"Township"},{"District":"Hpa-An","Township":"Hpapun","longitude":97.444878,"latitude":18.06496,"Type ":"Township"},{"District":"Monywa","Township":"Kani","longitude":94.848469,"latitude":22.43291,"Type ":"Township"},{"District":"Mindat","Township":"Paletwa","longitude":92.854607,"latitude":21.304407,"Type ":"Township"},{"District":"Pyinoolwin","Township":"Singu","longitude":95.998993,"latitude":22.549781,"Type ":"Township"},{"District":"Thayet","Township":"Aunglan","longitude":95.216843,"latitude":19.358553,"Type ":"Township"},{"District":"Thayet","Township":"Aunglan","longitude":93.6028719,"latitude":22.6450258,"Type ":"Township"},{"District":"Kale","Township":"Kale","longitude":94.064594,"latitude":23.186442,"Type ":"Township"},{"District":"Kyaukme","Township":"Mabein","longitude":96.629204,"latitude":23.472921,"Type ":"Township"},{"District":"Minbu","Township":"Minbu","longitude":94.875183,"latitude":20.171606,"Type ":"Township"},{"District":"Sittwe","Township":"Mrauk-U","longitude":93.18844,"latitude":20.591845,"Type ":"Township"},{"District":"Sittwe","Township":"Myebon","longitude":93.373764,"latitude":20.046762,"Type ":"Township"}]'
+
+    var locations = JSON.parse(locationJSON);
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 6,
+      center: new google.maps.LatLng(21.9403599, 96.0758242),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) { 
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
+        map: map
+      });
+      console.log(locations[i].latitude, locations[i].longitude);
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i].Township);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+</body>
+</html>

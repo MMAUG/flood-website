@@ -1,7 +1,9 @@
 Website for Myanmar Flood 2015 07/08
 ===================
 
-This is web version of FloodInfo Android Application.
+This is the community driven development repo for http://www.myanmarflood.info which is accompanied by the FloodInfo Android application. 
+
+Recently(July / August, 2015), a flood disaster has been fallen upon the Sagaing and Rakhine divisions of Myanmar. This web site is an emergency information website for providing flood related information, news as well as a site for connecting donor groups, charity communities and the public.
 
 Credits
 --------
