@@ -52,14 +52,14 @@
 
 				<div id="new-feed" class="mdl-grid">
 					<h3 class="page-title">Post Flood News</h3>
-					<div>
+					<div class="new-post-form">
 						<form action="#" method="POST">
-							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label new-input">
 								<input class="mdl-textfield__input" type="text" id="title" v-model="title" />
 								<label class="mdl-textfield__label" for="title">Title</label>
 							</div>
 							<p class="error" v-if="invalidTitle">New title is required</p>
-							<div class="mdl-textfield mdl-js-textfield">
+							<div class="mdl-textfield mdl-js-textfield new-input">
 								<textarea v-model="description" class="mdl-textfield__input" type="text" rows= "3" id="description" ></textarea>
 								<label class="mdl-textfield__label" for="description">Description</label>
 							</div>
@@ -75,7 +75,7 @@
 					<!-- Show loading text and hide after data are ready -->
 					<div id="loading" v-if="loading"><h4>Loading ...</h4></div>
 
-					<div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp" v-repeat="news" data-search="{{ title }} : {{ description }}">
+					<div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp" v-repeat="news" data-search="{{ title | lowercase }} : {{ description | lowercase }}">
 						<div class="mdl-card__title">
 							<h2 class="mdl-card__title-text">{{ title }}</h2>
 						</div> <!-- end of div.mdl-card__title -->
@@ -98,6 +98,7 @@
 
 	</div> <!-- end of div.mdl-layout -->
 
+	<script src="js/knayi-myscript.js"></script>
   <script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/material.min.js"></script>
 	<script src="js/vue.min.js"></script>

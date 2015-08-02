@@ -13,6 +13,7 @@ var alias = [
 $("#search-at-header").on('keyup', function(event){
   var that = $(this);
   var typped = that.val();
+  typped = typped.toLowerCase();
   var keywords = [];
 
   typped.split(" ").forEach(function(keyword){
@@ -32,7 +33,7 @@ $("#search-at-header").on('keyup', function(event){
 
   $("#donation-groups .mdl-card").each(function(index, card){
     card = $(card);
-    if( !card.attr("data-search").match(keywords, "g") ) {
+    if( !card.attr("data-search").match(keywords, "gi") ) {
       card.hide(400);
     } else {
       card.show(400);
@@ -41,7 +42,7 @@ $("#search-at-header").on('keyup', function(event){
 
   $("#new-feed .mdl-card").each(function(index, card){
     card = $(card);
-    if( !card.attr("data-search").match(keywords, "g") ) {
+    if( !card.attr("data-search").match(keywords, "gi") ) {
       card.hide(400);
     } else {
       card.show(400);
@@ -93,6 +94,11 @@ var donationGroup = new Vue({
         info.description = info.description.replace($REG_URL, function(match, url){
           return "<a href='"+ url +"'> "+url+" </a>";
         });
+
+        info.title = kny.fontConvert(info.title, "unicode5");
+        info.description = kny.fontConvert(info.description, "unicode5");
+        // info.content = kny.fontConvert(info.content, "unicode5");
+
         return info;
       });
 
@@ -205,6 +211,17 @@ var newsfeeds = new Vue({
   ready: function() {
     // Request donation group from api server
     this.$http.get(newsURL, function (data, status, request) {
+
+      data = data.map(function(info){
+        info.description = info.description.replace($REG_URL, function(match, url){
+          return "<a href='"+ url +"'> "+url+" </a>";
+        });
+
+        info.title = kny.fontConvert(info.title, "unicode5");
+        info.description = kny.fontConvert(info.description, "unicode5");
+
+        return info;
+      });
       // Set news data from api response data.
       this.$set('news', data);
       // Set loading is false
