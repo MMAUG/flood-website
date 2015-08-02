@@ -74,9 +74,19 @@ p {
 
 #add-donation-gp-btn {
 	position: absolute;
-	right: 30px;
-	top: 35px;
+    z-index: 100;
 }
+
+.mdl-layout:not(.is-small-screen) #add-donation-gp-btn {
+	right: 30px;
+	top: 100px;
+}
+
+.mdl-layout.is-small-screen #add-donation-gp-btn {
+	right: 20px;
+	bottom: 20px;
+}
+
 
 .filter-container {
 	text-align: right;
@@ -125,6 +135,10 @@ p {
 	font-size: 18px;
 }
 .new-input {
+	width: 100%;
+}
+
+#new-donation-groups .mdl-textfield {
 	width: 100%;
 }
 
