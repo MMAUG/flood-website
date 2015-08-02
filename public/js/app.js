@@ -1,34 +1,54 @@
 var baseURL = 'https://floodinfo-myanmar.herokuapp.com/api/';
 var donationGroupURL = baseURL + 'donation_groups';
 var newsURL = baseURL + 'newsfeeds';
+var $REG_URL = /((https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?)/g;
 
-if (typeof $ != 'undefined') {
-  $("#search-at-header").on('keyup', function(event){
-    var that = $(this);
-    var type = that.val();
+var alias = [
+  ["bago", "ပဲခူး"],
+  ["rakhing", "ရခိုင်"],
+  ["kayin", "ကရင်"],
+  ["ayeyarwaddy", "ဧရာ၀တီ", "ဧရာဝတီ"]
+];
 
-    // Make lower case
-    type = type.toString().toLowerCase();
+$("#search-at-header").on('keyup', function(event){
+  var that = $(this);
+  var typped = that.val();
+  typped = typped.toLowerCase();
+  var keywords = [];
 
-    $("#donation-groups .mdl-card").each(function(index, card){
-      card = $(card);
-      if( !card.attr("data-search").match(type, "g") ) {
-        card.hide(400);
-      } else {
-        card.show(400);
+  typped.split(" ").forEach(function(keyword){
+    var aliasfound = false;
+    alias.forEach(function(alia){
+      if( alia.indexOf(keyword) !== -1 ){
+        aliasfound = true;
+        keywords = keywords.concat(alia);
       }
     });
-
-    $("#new-feed .mdl-card").each(function(index, card){
-      card = $(card);
-      if( !card.attr("data-search").match(type, "g") ) {
-        card.hide(400);
-      } else {
-        card.show(400);
-      }
-    });
+    if(!aliasfound){
+      keywords.push(keyword);
+    }
   });
-}
+
+  keywords = keywords.join("|");
+
+  $("#donation-groups .mdl-card").each(function(index, card){
+    card = $(card);
+    if( !card.attr("data-search").match(keywords, "gi") ) {
+      card.hide(400);
+    } else {
+      card.show(400);
+    }
+  });
+
+  $("#new-feed .mdl-card").each(function(index, card){
+    card = $(card);
+    if( !card.attr("data-search").match(keywords, "gi") ) {
+      card.hide(400);
+    } else {
+      card.show(400);
+    }
+  });
+});
 
 /**
  * JQuery Helper functions
@@ -70,6 +90,18 @@ var donationGroup = new Vue({
   	// Request donation group from api server
   	this.$http.get(donationGroupURL, function (data, status, request) {
   		// Set groups data from api response data.
+      data = data.map(function(info){
+        info.description = info.description.replace($REG_URL, function(match, url){
+          return "<a href='"+ url +"'> "+url+" </a>";
+        });
+
+        info.title = kny.fontConvert(info.title, "unicode5");
+        info.description = kny.fontConvert(info.description, "unicode5");
+        // info.content = kny.fontConvert(info.content, "unicode5");
+
+        return info;
+      });
+
   		this.$set('groups', data);
       // Set total groups
       this.$set('total', data.length);
@@ -179,6 +211,17 @@ var newsfeeds = new Vue({
   ready: function() {
     // Request donation group from api server
     this.$http.get(newsURL, function (data, status, request) {
+
+      data = data.map(function(info){
+        info.description = info.description.replace($REG_URL, function(match, url){
+          return "<a href='"+ url +"'> "+url+" </a>";
+        });
+
+        info.title = kny.fontConvert(info.title, "unicode5");
+        info.description = kny.fontConvert(info.description, "unicode5");
+
+        return info;
+      });
       // Set news data from api response data.
       this.$set('news', data);
       // Set loading is false
