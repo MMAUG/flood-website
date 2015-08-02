@@ -16,16 +16,7 @@
 		    <span class="mdl-layout-title">Myanmar Flood Infomation</span>
 		    <!-- Add spacer, to align navigation to the right -->
 		    <div class="mdl-layout-spacer"></div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-	                  mdl-textfield--floating-label mdl-textfield--align-right">
-	        <label class="mdl-button mdl-js-button mdl-button--icon"
-	               for="search-at-header">
-	          <i class="material-icons">search</i>
-	        </label>
-	        <div class="mdl-textfield__expandable-holder">
-	          <input class="mdl-textfield__input" type="text" name="sample" id="search-at-header" />
-	        </div>
-	      </div>
+
 		    <!-- Navigation. We hide it in small screens. -->
     	    <p class="app-download-link mdl-color-text--white mdl-layout--large-screen-only">Download Android App from <a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Play Store</a> or Direct
     			<a href="https://goo.gl/CxXzyH">Download Link</a></p>
@@ -70,7 +61,23 @@
 						</form>
 					</div>
 
-					<h3 class="page-title">News Feed</h3>
+					<!-- Filter Serach -->
+					<div class="mdl-cell--6-col">
+						<h3 class="page-title">News Feed</h3>	
+					</div>
+
+					<div class="mdl-cell--6-col filter-container">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+			                  mdl-textfield--floating-label mdl-textfield--align-right">
+			        		<label class="mdl-button mdl-js-button mdl-button--icon"
+			               for="search-at-header">
+			          			<i class="material-icons">search</i>
+			        		</label>
+				        	<div class="mdl-textfield__expandable-holder">
+				          		<input class="mdl-textfield__input" type="text" name="sample" id="search-at-header" />
+				        	</div>
+			      		</div>
+					</div>
 
 					<!-- Show loading text and hide after data are ready -->
 					<div id="loading" v-if="loading"><h4>Loading ...</h4></div>

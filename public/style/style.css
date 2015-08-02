@@ -77,6 +77,10 @@ p {
 	top: 35px;
 }
 
+.filter-container {
+	text-align: right;
+}
+
 .app-download-link a {
 	color: #81D4FA;
 }
