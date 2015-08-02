@@ -1,14 +1,38 @@
 var baseURL = 'https://floodinfo-myanmar.herokuapp.com/api/';
 var donationGroupURL = baseURL + 'donation_groups';
 var newsURL = baseURL + 'newsfeeds';
+var $REG_URL = /((https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?)/g;
+
+var alias = [
+  ["bago", "ပဲခူး"],
+  ["rakhing", "ရခုိင္","ရခိုင္" ],
+  ["kayin", "ကရင္"],
+  ["ayeyarwaddy", "ဧရာ၀တီ", "ဧရာဝတီ"]
+];
 
 $("#search-at-header").on('keyup', function(event){
   var that = $(this);
-  var type = that.val();
+  var typped = that.val();
+  var keywords = [];
+
+  typped.split(" ").forEach(function(keyword){
+    var aliasfound = false;
+    alias.forEach(function(alia){
+      if( alia.indexOf(keyword) !== -1 ){
+        aliasfound = true;
+        keywords = keywords.concat(alia);
+      }
+    });
+    if(!aliasfound){
+      keywords.push(keyword);
+    }
+  });
+
+  keywords = keywords.join("|");
 
   $("#donation-groups .mdl-card").each(function(index, card){
     card = $(card);
-    if( !card.attr("data-search").match(type, "g") ) {
+    if( !card.attr("data-search").match(keywords, "g") ) {
       card.hide(400);
     } else {
       card.show(400);
@@ -17,7 +41,7 @@ $("#search-at-header").on('keyup', function(event){
 
   $("#new-feed .mdl-card").each(function(index, card){
     card = $(card);
-    if( !card.attr("data-search").match(type, "g") ) {
+    if( !card.attr("data-search").match(keywords, "g") ) {
       card.hide(400);
     } else {
       card.show(400);
@@ -65,6 +89,13 @@ var donationGroup = new Vue({
   	// Request donation group from api server
   	this.$http.get(donationGroupURL, function (data, status, request) {
   		// Set groups data from api response data.
+      data = data.map(function(info){
+        info.description = info.description.replace($REG_URL, function(match, url){
+          return "<a href='"+ url +"'> "+url+" </a>";
+        });
+        return info;
+      });
+
   		this.$set('groups', data);
       // Set total groups
       this.$set('total', data.length);
