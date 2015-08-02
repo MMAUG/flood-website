@@ -7,7 +7,7 @@ Credits
 --------
 
 - Modal box is inspire on [http://materializecss.com/modals.html](http://materializecss.com/modals.html)
-- Material Design Loading Spinner [http://codepen.io/mrrocks/pen/EiplA](http://codepen.io/mrrocks/pen/EiplA)
+- Material Design Loading Spinner [http://codepen.io/jczimm/pen/vEBpoL](http://codepen.io/jczimm/pen/vEBpoL)
 
 
 Development
