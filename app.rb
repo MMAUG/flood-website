@@ -6,19 +6,19 @@ configure do
 end
 
 get '/' do
-  send_file File.join('index.html')
+  send_file File.join('public/app/index.html')
 end
 
 get '/news' do
-  send_file File.join('news.html')
+  send_file File.join('public/app/news.html')
 end
 
 get '/form' do
-  send_file File.join('form.html')
+  send_file File.join('public/app/form.html')
 end
 
 get '/flood_locations' do
-  send_file File.join('flood_locations_map.html')
+  send_file File.join('public/app/flood_locations_map.html')
 end
 
 get '/campaigns' do
