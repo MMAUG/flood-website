@@ -7,6 +7,7 @@ var uglify = require('gulp-uglify');
 var watch = require('gulp-watch');
 
 gulp.task('watch', function(){
+  gulp.watch("gulpfile.js", ["scripts"]);
   gulp.watch("./public/js/*", ['scripts']);
 });
 
@@ -23,7 +24,7 @@ gulp.task('scripts', function() {
   		'./public/js/marker_clusterer.js',
       './public/js/floods_map.js'
   	])
-  	.pipe(uglify())
+  	// .pipe(uglify())
     .pipe(concat('app.min.js'))
     .pipe(gulp.dest('./public/js/'));
 });
