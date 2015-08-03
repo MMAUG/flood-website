@@ -7,13 +7,12 @@ if(typeof google !== "undefined"){
   var map = new google.maps.Map(document.getElementById('kunyi-map'), {
     zoom: 6,
     center: new google.maps.LatLng(21.9403599, 96.0758242),
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-    icon: window.location.origin + "/img/home_flood_icon.svg"
+    mapTypeId: google.maps.MapTypeId.ROADMAP
   });
   var map2 = new google.maps.Map(document.getElementById('kokoye-map'), {
     zoom: 6,
     center: new google.maps.LatLng(21.9403599, 96.0758242),
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
   });
 
   var infowindow = new google.maps.InfoWindow();
@@ -40,7 +39,8 @@ if(typeof google !== "undefined"){
     for (i2 = 0; i2 < locations2.length; i2++) { 
       marker2 = new google.maps.Marker({
         position: new google.maps.LatLng(locations2[i2].coordinates[0], locations2[i2].coordinates[1]),
-        map: map2
+        map: map2,
+        icon: window.location.origin + "/img/home_flood_icon_small.svg"
       });
       google.maps.event.addListener(marker2, 'click', (function(marker2, i2) {
         return function() {

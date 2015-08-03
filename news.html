@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 </head>
-<body>
+<body data-page="news">
 	<div class="mdl-layout mdl-js-layout">
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 		<header class="mdl-layout__header">
@@ -21,16 +21,22 @@
 		    <!-- Add spacer, to align navigation to the right -->
 		    <div class="mdl-layout-spacer"></div>
 
-		    <!-- Navigation. We hide it in small screens. -->
-    	    <p class="app-download-link mdl-color-text--white mdl-layout--large-screen-only">Download Android App from <a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Play Store</a> or Direct
-    			<a href="https://goo.gl/CxXzyH">Download Link</a></p>
-    	  </div>
-    	  <div class="mdl-layout__header-row mdl-layout--large-screen-only" id="nav-second-header">
-      	    <nav class="mdl-navigation">
-      	      	<a class="mdl-navigation__link is-active" href="/">Donation Groups</a>
-      			<a class="mdl-navigation__link" href="/news">News</a>
-      			<a class="mdl-navigation__link" href="/flood_locations">Flooded Locations</a>
-      	    </nav>
+  		    <a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">
+            <img alt="Android app on Google Play"
+                 src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+          </a>
+          &nbsp;
+          &nbsp;
+          <a href="https://goo.gl/CxXzyH">
+            <img src="img/download.png" alt="Download Direct">
+          </a>
+    	</div>
+  	  <div class="mdl-layout__header-row mdl-layout--large-screen-only" id="nav-second-header">
+    	   <nav class="mdl-navigation">
+    	      	<a class="mdl-navigation__link is-active" href="/">Donation Groups</a>
+    			<a class="mdl-navigation__link" href="/news">News</a>
+    			<a class="mdl-navigation__link" href="/flood_locations">Flooded Locations</a>
+    	   </nav>
 		  </div>
 		</header>
 		<div class="mdl-layout__drawer">
@@ -49,7 +55,7 @@
 
 			<section class="section--center mdl-grid" id="main-content">
 
-				<div id="new-feed" class="mdl-cell mdl-cell--12-col">
+				<div id="new-feed" class="mdl-cell mdl-cell--12-col" >
 					<h3 class="page-title">Post Flood News</h3>
 					<div class="new-post-form">
 						<form action="#" method="POST">
@@ -69,35 +75,27 @@
 						</form>
 					</div>
 
-					<!-- Filter Serach -->
-					<div class="mdl-cell--6-col">
-						<h3 class="page-title">News Feed</h3>
-					</div>
+          <div class="mdl-title-box mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
+            <h3 class="page-title">New Feeds</h3>
+          </div>
 
-					<div class="mdl-cell--6-col filter-container">
-						<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-			                  mdl-textfield--floating-label mdl-textfield--align-right">
-			        		<label class="mdl-button mdl-js-button mdl-button--icon"
-			               for="search-at-header">
-			          			<i class="material-icons">search</i>
-			        		</label>
-				        	<div class="mdl-textfield__expandable-holder">
-				          		<input class="mdl-textfield__input" type="text" name="sample" id="search-at-header" />
-				        	</div>
-			      		</div>
-					</div>
-
-					<!-- Show loading text and hide after data are ready -->
-					<div id="loading" v-if="loading">
-						<!-- http://codepen.io/jczimm/pen/vEBpoL -->
-						<svg class="circular">
-						    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-						</svg>
-					</div>
+          <!-- Filter Serach -->
+          <div class="mdl-title-box mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet filter-container">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable 
+                        mdl-textfield--floating-label mdl-textfield--align-right">
+              <label class="mdl-button mdl-js-button mdl-button--icon"
+                   for="search-at-header">
+                <i class="material-icons">search</i>
+              </label>
+              <div class="mdl-textfield__expandable-holder">
+                <input class="mdl-textfield__input" type="text" name="sample" id="search-at-header" />
+              </div>
+            </div>
+          </div>
 
 					<div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp" v-repeat="news" data-search="{{ title | lowercase }} : {{ description | lowercase }}">
 						<div class="mdl-card__title">
-							<h2 class="mdl-card__title-text">{{ title }}</h2>
+							<h2 class="mdl-card__title-text"> {{ title }} </h2>
 						</div> <!-- end of div.mdl-card__title -->
 						<div class="mdl-card__supporting-text">
 							<p>{{ description }}</p>
@@ -107,8 +105,17 @@
 							v-on="click : reportNew(id)">
 								Report this news
 							</button>
+              <span class="mdl-card__time"> {{ posted_time | moment }} </span>
 						</div>
 					</div> <!-- end of div.mdl-card -->
+
+          <!-- Show loading text and hide after data are ready -->
+          <div id="loading" v-if="loading">
+            <!-- http://codepen.io/jczimm/pen/vEBpoL -->
+            <svg class="circular">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+          </div>
 
 				</div> <!-- end of div#donation-groups -->
 

@@ -22,8 +22,15 @@
 		    <!-- Add spacer, to align navigation to the right -->
 		    <div class="mdl-layout-spacer"></div>
 		    <!-- Navigation. We hide it in small screens. -->
-        <p class="app-download-link mdl-color-text--white mdl-layout--large-screen-only">Download Android App from <a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Play Store</a> or Direct
-				<a href="https://goo.gl/CxXzyH">Download Link</a></p>
+        <a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">
+				  <img alt="Android app on Google Play"
+				       src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+				</a>
+				&nbsp;
+				&nbsp;
+				<a href="https://goo.gl/CxXzyH">
+					<img src="img/download.png" alt="Download Direct">
+				</a>
 		  </div>
 		  <div class="mdl-layout__header-row mdl-layout--large-screen-only" id="nav-second-header">
 	  	    <nav class="mdl-navigation">
@@ -57,26 +64,26 @@
 
 					<form action="#" method="POST">
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-							<input class="mdl-textfield__input" type="text" id="title" v-model="title" />
+							<input required="true" class="mdl-textfield__input" type="text" id="title" v-model="title" />
 							<label class="mdl-textfield__label" for="title">Title</label>
 						</div>
 						<p class="error" v-if="invalidTitle">Group title is required</p>
 						<div class="mdl-textfield mdl-js-textfield">
-							<textarea v-model="description" class="mdl-textfield__input" type="text"
+							<textarea required="true" v-model="description" class="mdl-textfield__input" type="text"
 							rows= "3" id="description" ></textarea>
 							<label class="mdl-textfield__label" for="description">Description</label>
 						</div>
 						<div class="mdl-textfield mdl-js-textfield">
-							<textarea v-model="phone_numbers" class="mdl-textfield__input" type="text"
+							<textarea required="true" v-model="phone_numbers" class="mdl-textfield__input" type="text"
 							rows= "3" id="phone_numbers" ></textarea>
 							<label class="mdl-textfield__label" for="phone_numbers">Phone Numbers</label>
 						</div>
 						<div class="mdl-textfield mdl-js-textfield">
-							<textarea v-model="donation_location" class="mdl-textfield__input" type="text" rows= "3" id="donation_location" ></textarea>
+							<textarea required="true" v-model="donation_location" class="mdl-textfield__input" type="text" rows= "3" id="donation_location" ></textarea>
 							<label class="mdl-textfield__label" for="donation_location">Address</label>
 						</div>
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-							<input class="mdl-textfield__input" type="text" id="facebook_url"
+							<input required="true" class="mdl-textfield__input" type="text" id="facebook_url"
 							v-model="facebook_url" />
 							<label class="mdl-textfield__label" for="facebook_url">Facebook Url</label>
 						</div>
