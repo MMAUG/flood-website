@@ -13,7 +13,7 @@ get '/news' do
   send_file File.join('app/views/news.html')
 end
 
-get '/news_form' do
+get '/news-form' do
   send_file File.join('public/app/news-form.html')
 end
 
@@ -21,8 +21,8 @@ get '/form' do
   send_file File.join('app/views/form.html')
 end
 
-get '/flood_locations' do
-  send_file File.join('app/views/flood_locations_map.html')
+get '/flood-locations' do
+  send_file File.join('app/views/flood-locations-map.html')
 end
 
 get '/campaigns' do
