@@ -30,7 +30,7 @@
 
         <div id="donation-groups" class="mdl-grid" v-on="click:update">
 
-          <!-- <h5 class="total" v-if="total">We collect {{ total }} donation group lists.</h5> -->
+          <h5 class="total" v-if="total">We collect {{ total }} donation group lists.</h5>
 
           <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-shadow--2dp" v-repeat="groups" data-search="{{ title | lowercase }} : {{ description | lowercase }} : {{ donation_location | lowercase }}">
             <div class="mdl-card__title mdl-card--expand">
