@@ -37,8 +37,8 @@ p {
 	padding: 0;
 	height: 64px;
 }
- #main-container {
-	padding-top: 48px;
+#main-container {
+	/*padding-top: 48px;*/
 }
 #main-content {
 	max-width: 860px;

@@ -13,26 +13,25 @@
 
       <section class="section--center mdl-grid" id="main-content">
 
-        <div id="new-feed" class="mdl-cell mdl-cell--12-col" >
+        <div class="mdl-title-box mdl-cell--6-col mdl-cell--12-col-tablet">
+          <h3 class="page-title">New Feeds</h3>
+        </div>
 
-          <div class="mdl-title-box mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
-            <h3 class="page-title">New Feeds</h3>
-          </div>
-
-          <!-- Filter Serach -->
-          <div class="mdl-title-box mdl-cell mdl-cell--6-col 
-                      mdl-cell--12-col-tablet filter-container">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable 
-                        mdl-textfield--floating-label mdl-textfield--align-right">
-              <label class="mdl-button mdl-js-button mdl-button--icon"
-                   for="search-at-header">
-                <i class="material-icons">search</i>
-              </label>
-              <div class="mdl-textfield__expandable-holder">
-                <input class="mdl-textfield__input" type="text" name="sample" id="search-at-header" />
-              </div>
+        <!-- Filter Serach -->
+        <div class="mdl-title-box mdl-cell--6-col mdl-cell--12-col-tablet filter-container">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable 
+                      mdl-textfield--floating-label mdl-textfield--align-right">
+            <label class="mdl-button mdl-js-button mdl-button--icon"
+                 for="search-at-header">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" name="sample" id="search-at-header" />
             </div>
           </div>
+        </div>
+
+        <div id="new-feed" class="mdl-cell mdl-cell--12-col" >
 
           <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp" v-repeat="news" data-search="{{ title | lowercase }} : {{ description | lowercase }}">
             <div class="mdl-card__title">
