@@ -311,4 +311,6 @@ p {
   box-sizing: border-box;
 }
 
-
+#kunyi-map {
+  height: 500px;
+}
