@@ -7,8 +7,6 @@
 
     <% include partials/topbar %>
     <% include partials/drawer %>
-    <% include partials/material_add_button %>
-
     <main class="mdl-layout__content" id="main-container">
 
       <section class="section--center mdl-grid" id="main-content">
@@ -72,7 +70,8 @@
           <div id="loading" v-if="loading">
             <!-- http://codepen.io/jczimm/pen/vEBpoL -->
             <svg class="circular">
-                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+              <circle class="path" cx="50" cy="50" r="20" 
+                fill="none" stroke-width="2" stroke-miterlimit="10"/>
             </svg>
           </div>
 
