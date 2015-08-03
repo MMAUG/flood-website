@@ -287,6 +287,14 @@ var newsForm = new Vue({
   }
 });
 
+/* Online Donations */
+var online = new Vue({
+    el: '#online-donations',
+    data: {
+      list: campaigns
+    }
+});
+
 
 /**
  * Scorll down to the end will query next page

@@ -26,5 +26,5 @@ get '/flood_locations' do
 end
 
 get '/campaigns' do
-  'Campaigns will be here'
+  send_file File.join('app/views/campaigns.html')
 end

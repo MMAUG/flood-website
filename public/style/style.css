@@ -293,6 +293,16 @@ p {
   }
 }
 
+#online-donations .mdl-card__title {
+	align-items: flex-start;
+}
+
+#online-donations .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+}
+
 
 /* Media Query */
 @media only screen 
