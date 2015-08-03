@@ -13,6 +13,10 @@ get '/news' do
   send_file File.join('app/views/news.html')
 end
 
+get '/news-form' do
+  send_file File.join('public/app/news-form.html')
+end
+
 get '/form' do
   send_file File.join('app/views/form.html')
 end
