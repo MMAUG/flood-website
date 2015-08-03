@@ -22,15 +22,17 @@
 		    <!-- Add spacer, to align navigation to the right -->
 		    <div class="mdl-layout-spacer"></div>
 		    <!-- Navigation. We hide it in small screens. -->
-        <a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">
-				  <img alt="Android app on Google Play"
-				       src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
-				</a>
-				&nbsp;
-				&nbsp;
-				<a href="https://goo.gl/CxXzyH">
-					<img src="img/download.png" alt="Download Direct">
-				</a>
+        	<div class="mdl-layout--large-screen-only">
+        		<a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">
+        		  	<img alt="Android app on Google Play"
+        		       src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+        		</a>
+        		&nbsp;
+        		&nbsp;
+        		<a href="https://goo.gl/CxXzyH">
+        			<img src="img/download.png" alt="Download Direct">
+        		</a>
+        	</div>
 		  </div>
 		  <div class="mdl-layout__header-row mdl-layout--large-screen-only" id="nav-second-header">
 	  	    <nav class="mdl-navigation">
@@ -73,6 +75,7 @@
 							rows= "3" id="description" ></textarea>
 							<label class="mdl-textfield__label" for="description">Description</label>
 						</div>
+						<p class="error" v-if="invalidTitle">Group description is required</p>
 						<div class="mdl-textfield mdl-js-textfield">
 							<textarea required="true" v-model="phone_numbers" class="mdl-textfield__input" type="text"
 							rows= "3" id="phone_numbers" ></textarea>
