@@ -93,6 +93,7 @@ var donationGroup = new Vue({
           info.title = kny.syllbreak( kny.fontConvert(info.title, "unicode5"), "unicode5");
           info.description = kny.syllbreak( kny.fontConvert(info.description, "unicode5"), "unicode5");
           info.donation_location = kny.syllbreak( kny.fontConvert(info.donation_location, "unicode5"), "unicode5");
+          info.phone_numbers = kny.syllbreak( kny.fontConvert(info.phone_numbers, "unicode5"), "unicode5");
           return info;
         });
 
