@@ -15,6 +15,7 @@
 <body data-page="donate">
   <div class="mdl-layout mdl-js-layout">
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
     <header class="mdl-layout__header">
   <div class="mdl-layout__header-row">
     <!-- Title -->
@@ -62,28 +63,80 @@
   <i class="material-icons mdl-color-text--white" role="presentation">add</i>
   <span class="visuallyhidden">add</span>
 </a>
-    <main class="mdl-layout__content" id="main-container">
-      <section class="section--center mdl-grid" id="main-content">
-      <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-        <div class="mdl-tabs__tab-bar">
-            <a href="#kunyi-map-panel" class="mdl-tabs__tab is-active">Flooded Locations by Townships</a>
-            <a href="#kokoye-map-panel" class="mdl-tabs__tab">Possible Flooded Locations by Villages</a>
-        </div>
 
-        <div class="mdl-tabs__panel is-active" id="kunyi-map-panel">
-          Locations data are taken from <a href="https://kunyi.asia/">kunyi.asia</a>.
-          <div id="kunyi-map" style="height: 768px; width: 1025px;"></div>            
-        </div>
-        <div class="mdl-tabs__panel" id="kokoye-map-panel">
-          Locations data are provided by <a href="https://www.facebook.com/kokoye2007">Ko Ko Ye</a>.
-          <div id="kokoye-map" style="height: 768px; width: 1025px;"></div>
-        </div>
-      </div>
-      
+    <main class="mdl-layout__content" id="main-container">
+
+      <section class="section--center mdl-grid" id="main-content">
+
+        <div id="new-feed" class="mdl-cell mdl-cell--12-col" >
+          <h3 class="page-title">Post Flood News</h3>
+          <div class="new-post-form">
+            <form action="#" method="POST">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label new-input">
+                <input class="mdl-textfield__input" type="text" id="title" v-model="title" />
+                <label class="mdl-textfield__label" for="title">Title</label>
+              </div>
+              <p class="error" v-if="invalidTitle">New title is required</p>
+              <div class="mdl-textfield mdl-js-textfield new-input">
+                <textarea v-model="description" class="mdl-textfield__input" type="text" rows= "3" id="description" ></textarea>
+                <label class="mdl-textfield__label" for="description">Description</label>
+              </div>
+              <p class="error" v-if="invalidDescription">New description is required</p>
+
+              <input type="submit" value="Post" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" v-on="click : postNew">
+              <span v-if="newIsPosting">Posting...</span>
+            </form>
+          </div>
+
+          <div class="mdl-title-box mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
+            <h3 class="page-title">New Feeds</h3>
+          </div>
+
+          <!-- Filter Serach -->
+          <div class="mdl-title-box mdl-cell mdl-cell--6-col 
+                      mdl-cell--12-col-tablet filter-container">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable 
+                        mdl-textfield--floating-label mdl-textfield--align-right">
+              <label class="mdl-button mdl-js-button mdl-button--icon"
+                   for="search-at-header">
+                <i class="material-icons">search</i>
+              </label>
+              <div class="mdl-textfield__expandable-holder">
+                <input class="mdl-textfield__input" type="text" name="sample" id="search-at-header" />
+              </div>
+            </div>
+          </div>
+
+          <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp" v-repeat="news" data-search="{{ title | lowercase }} : {{ description | lowercase }}">
+            <div class="mdl-card__title">
+              <h2 class="mdl-card__title-text"> {{ title }} </h2>
+            </div> <!-- end of div.mdl-card__title -->
+            <div class="mdl-card__supporting-text">
+              <p>{{ description }}</p>
+            </div> <!-- end of div.mdl-card__supporting-text -->
+            <div class="mdl-card__actions mdl-card--border">
+              <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+              v-on="click : reportNew(id)">
+                Report this news
+              </button>
+              <span class="mdl-card__time"> {{ posted_time | moment }} </span>
+            </div>
+          </div> <!-- end of div.mdl-card -->
+
+          <!-- Show loading text and hide after data are ready -->
+          <div id="loading" v-if="loading">
+            <!-- http://codepen.io/jczimm/pen/vEBpoL -->
+            <svg class="circular">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+          </div>
+
+        </div> <!-- end of div#donation-groups -->
+
       </section> <!-- end of section#main-content -->
 
     </main> <!-- end of #main-container -->
-  </div> <!-- end of div.mdl-layout -->
+    </div> <!-- end of div.mdl-layout -->
   <script src="../js/app.min.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

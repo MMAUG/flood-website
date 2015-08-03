@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include partials/head %>
+<body data-page="donate">
+  <div class="mdl-layout mdl-js-layout">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <% include partials/topbar %>
+    <% include partials/drawer %>
+    <% include partials/material_add_button %>
+    <main class="mdl-layout__content" id="main-container">
+
+      <section class="section--center mdl-grid" id="main-content">
+
+        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+          <div class="mdl-tabs__tab-bar">
+            <a href="#map-panel" id="kunyi-map-panel" class="mdl-tabs__tab is-active">Flooded Locations by Townships</a>
+            <a href="#map-panel" id="kokoye-map-panel" class="mdl-tabs__tab">Possible Flooded Locations by Villages</a>
+          </div>
+          <div class="mdl-tabs__panel is-active" id="map-panel">
+            <div id="kunyi-map" width="100%"></div>  
+          </div>
+        </div>
+
+      </section> <!-- end of section#main-content -->
+
+    </main> <!-- end of #main-container -->
+  </div> <!-- end of div.mdl-layout -->
+  <% include partials/scripts %>
+</body>
+</html>
