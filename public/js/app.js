@@ -275,6 +275,61 @@ var newsfeeds = new Vue({
   }
 });
 
+// News Post Form
+var newsForm = new Vue({
+
+  el: '#new-form',
+
+  data: {
+    loading: false,
+    invalidTitle: false,
+    invalidDescription: false,
+    newIsPosting: false
+  },
+
+  methods: {
+    postNew: function (e) {
+      e.preventDefault();
+
+      var title = this.title;
+      var description = this.description;
+
+      if ( title === '' || typeof title === 'undefined') {
+        this.invalidTitle = true;
+      }
+
+      if ( description === '' || typeof description === 'undefined') {
+       this.invalidDescription = true;
+      }
+
+      // If validation fail, don't post to server
+      if ( this.invalidTitle || this.invalidDescription) {
+        return true;
+      }
+
+      // Reset validation triggers
+      this.invalidTitle = false;
+      this.invalidDescription = false;
+
+      // Show posting loading...
+      this.newIsPosting = true;
+
+      this.$http.post(newsURL, {title: title, description: description}, function(data, status, request) {
+        // Hide posting label...
+        this.newIsPosting = false;
+
+        this.title = "";
+        this.description = "";
+
+        $('#message-text').html('Thanks for your news post.');
+
+      }, {emulateJSON: true}).error(function (data, status, request) {
+        alert('Error: Please try again to post your new...');
+      });
+    }
+  }
+});
+
 
 /**
  * Scorll down to the end will query next page
