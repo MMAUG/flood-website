@@ -115,6 +115,7 @@ var newDonationGroup = new Vue({
 
   data: {
     invalidTitle: false,
+    invalidDescription: false,
     newIsPosting: false
   },
 
@@ -123,9 +124,14 @@ var newDonationGroup = new Vue({
       e.preventDefault();
 
       var title = this.title;
+      var description = this.description;
 
       if ( title === '' || typeof title === 'undefined') {
         this.invalidTitle = true;
+      }
+
+      if ( description === '' || typeof description === 'undefined') {
+        this.invalidDescription = true;
       }
 
       // If validation fail, don't post to server
@@ -136,7 +142,7 @@ var newDonationGroup = new Vue({
       // Prepare post data
       var postData = {
         title: title,
-        description: this.description,
+        description: description,
         phone_numbers: this.phone_numbers,
         donation_location: this.donation_location,
         facebook_url: this.facebook_url
@@ -144,6 +150,7 @@ var newDonationGroup = new Vue({
 
       // Reset validation triggers
       this.invalidTitle = false;
+      this.invalidDescription = false;
 
       // Show posting loading...
       this.newIsPosting = true;

@@ -75,6 +75,7 @@
 							rows= "3" id="description" ></textarea>
 							<label class="mdl-textfield__label" for="description">Description</label>
 						</div>
+						<p class="error" v-if="invalidTitle">Group description is required</p>
 						<div class="mdl-textfield mdl-js-textfield">
 							<textarea required="true" v-model="phone_numbers" class="mdl-textfield__input" type="text"
 							rows= "3" id="phone_numbers" ></textarea>
