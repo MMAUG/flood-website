@@ -20,3 +20,7 @@ end
 get '/flood_locations' do
   send_file File.join('flood_locations_map.html')
 end
+
+get '/campaigns' do
+  'Campaigns will be here'
+end
