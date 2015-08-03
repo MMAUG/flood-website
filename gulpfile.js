@@ -25,6 +25,7 @@ gulp.task('scripts', function() {
     './app/assets/js/vue-resource.min.js',
     './app/assets/js/knayi-myscript.js',
     './app/assets/js/search.js',
+    './app/assets/js/campaign-data.js',
     './app/assets/js/app.js',
     './app/assets/js/floods_map.js'
   ])
