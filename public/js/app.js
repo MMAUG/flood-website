@@ -179,9 +179,6 @@ var newsfeeds = new Vue({
   data: {
     news: [],
     loading: false,
-    invalidTitle: false,
-    invalidDescription: false,
-    newIsPosting: false,
     nextPage: 1
   },
 
@@ -191,47 +188,6 @@ var newsfeeds = new Vue({
   },
 
   methods: {
-    postNew: function (e) {
-      e.preventDefault();
-
-      var title = this.title;
-      var description = this.description;
-
-      if ( title === '' || typeof title === 'undefined') {
-        this.invalidTitle = true;
-      }
-
-      if ( description === '' || typeof description === 'undefined') {
-       this.invalidDescription = true;
-      }
-
-      // If validation fail, don't post to server
-      if ( this.invalidTitle || this.invalidDescription) {
-        return true;
-      }
-
-      // Reset validation triggers
-      this.invalidTitle = false;
-      this.invalidDescription = false;
-
-      // Show posting loading...
-      this.newIsPosting = true;
-
-      this.$http.post(newsURL, {title: title, description: description}, function(data, status, request) {
-        // Hide posting label...
-        this.newIsPosting = false;
-
-        // Add server response data to current news data.
-        this.news.unshift(data);
-
-        this.title = "";
-        this.description = "";
-
-      }, {emulateJSON: true}).error(function (data, status, request) {
-        alert('Error: Please try again to post your new...');
-      });
-    },
-
     reportNew: function (id) {
 
       var reportURL = newsURL + '/' + id + '/report_as_spam';
@@ -281,7 +237,6 @@ var newsForm = new Vue({
   el: '#new-form',
 
   data: {
-    loading: false,
     invalidTitle: false,
     invalidDescription: false,
     newIsPosting: false
