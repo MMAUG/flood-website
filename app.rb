@@ -25,6 +25,11 @@ get '/flood-locations' do
   send_file File.join('app/views/flood-locations-map.html')
 end
 
+# For old links
+get '/flood_locations' do
+  send_file File.join('app/views/flood-locations-map.html')
+end
+
 get '/campaigns' do
   send_file File.join('app/views/campaigns.html')
 end
