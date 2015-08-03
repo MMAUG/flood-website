@@ -56,6 +56,8 @@ $(function(){
       return new Marker(loc.coordinates[0], loc.coordinates[1], "kokoye");
     });
 
+    console.log(locMakers);
+
     markers = locMakers.kunyi.map(function(marker){ return marker.marker});
     markerClusterer = new MarkerClusterer(map, markers, {gridSize: 50, maxZoom: 15});
 

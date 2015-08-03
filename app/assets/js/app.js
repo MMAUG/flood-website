@@ -221,7 +221,7 @@ var newsfeeds = new Vue({
           info.title = kny.syllbreak( kny.fontConvert(info.title, "unicode5"), "unicode5");
           info.description = kny.syllbreak( kny.fontConvert(info.description, "unicode5"), "unicode5");
           return info;
-        }).reverse();
+        });
 
         data = this.$get("news").concat(data);
         // Set news data from api response data.
@@ -287,13 +287,13 @@ var newsForm = new Vue({
   }
 });
 
-/* Online Donations */
-var online = new Vue({
-    el: '#online-donations',
-    data: {
-      list: campaigns
-    }
-});
+// /* Online Donations */
+// var online = new Vue({
+//     el: '#online-donations',
+//     data: {
+//       list: campaigns
+//     }
+// });
 
 
 /**
