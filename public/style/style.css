@@ -45,6 +45,7 @@ p {
 	/*padding-top: 48px;*/
 }
 #main-content {
+  overflow: hidden;
 	max-width: 860px;
 }
 .page-title {
