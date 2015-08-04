@@ -4,6 +4,7 @@
   "description": "Flood infromation from Myanmar",
   "main": "index.js",
   "scripts": {
+    "start": "ruby app.rb",
     "build": "gulp",
     "test": "mocha"
   },
