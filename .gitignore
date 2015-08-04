@@ -7,6 +7,3 @@
 /pkg
 /doc/api
 node_modules
-
-app/views/*
-public/js/app.min.js
