@@ -26,7 +26,7 @@ Vue.filter('truncate', function(value, length) {
 });
 
 Vue.filter('moment', function(value){
-  return moment(value).startOf('hour').fromNow();
+  return moment(value).fromNow();
 });
 
 // Donation group lists
