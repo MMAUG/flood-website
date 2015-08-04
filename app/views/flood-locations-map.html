@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Myanmar Flood Information</title>
+  <meta name="description" content="ေရေဘး သတင္းေတြ ဖတ္ခ်င္တာပဲျဖစ္ျဖစ္၊ ကိုယ္တိုင္ သတင္းေတြ၀ေ မၽွခ်င္တာပဲျဖစ္ျဖစ္ တစ္ေနရာထဲမွာ အလြယ္တကူ ဖတ္လို႔၊ share လို႔ရပါၿပီ။ ဒါ့အျပင္ ကိုယ္တိုင္လွူဒါန္းခ်င္တဲ့သူေတြအတြက္ ဆက္သြယ္လို႔ရမဲ့ အဖြဲ႕ ေတြရဲ့ လိပ္စာေတြ၊ ဖုန္းနံပါတ္ေတြလည္းပါ၀င္ပါတယ္။ ကိုယ္တိုင္လည္း အဖြဲ႕အသစ္ေတြကို ထည့္သြင့္းေပးလို႔ရပါတယ္။">
+  <meta name="keywords" content="myanmar,myanmar-flood,flood-2015">
+  <meta property="og:image" content="http://myanmarflood.info/img/metaimage.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/tharlon.css">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body data-page="map">
+  <div class="mdl-layout mdl-js-layout">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+  <div class="mdl-layout__header-row">
+    <!-- Title -->
+    <span class="mdl-layout-title"><a href="/" class="site-name">Myanmar Flood Information</a></span>
+    <!-- Add spacer, to align navigation to the right -->
+    <div class="mdl-layout-spacer"></div>
+    
+    <div class="mdl-layout--large-screen-only">
+      <a href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">
+          <img alt="Android app on Google Play"
+             src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+      </a>
+      &nbsp;
+      &nbsp;
+      <a href="http://bit.ly/infocenter-apk-latest">
+        <img src="img/download.png" alt="Download Direct">
+      </a>
+    </div>
+    
+  </div>
+  <div class="mdl-layout__header-row mdl-layout--large-screen-only" id="nav-second-header">
+      <nav class="mdl-navigation">
+          <a class="mdl-navigation__link is-active" href="/">Donation Groups</a>
+      <a class="mdl-navigation__link" href="/news">News</a>
+      <a class="mdl-navigation__link" href="/flood-locations">Flooded Locations</a>
+      <a class="mdl-navigation__link" href="/campaigns">Online Donations</a>
+      <a class="mdl-navigation__link" href="/dashboard">Flooding Area Dashboard</a>
+      </nav>
+  </div>
+</header>
+
+    
+<div class="mdl-layout__drawer">
+  <span class="mdl-layout-title"><img src="img/logo.png" width="32px" alt="Myanmar Flood Information"> Info Center</span>
+  <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="/">Donation Groups</a>
+        <a class="mdl-navigation__link" href="/news">News</a>
+        <a class="mdl-navigation__link" href="/flood-locations">Flooded Locations</a>
+        <a class="mdl-navigation__link" href="/campaigns">Online Donations</a>
+        <div class="drawer-separator"></div>
+        <a class="mdl-navigation__link" target="_blank" href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Get it on Play Store</a>
+        <a class="mdl-navigation__link" target="_blank" href="http://bit.ly/infocenter-apk-latest">Direct Download Link</a>
+  </nav>
+</div>
+
+    <main class="mdl-layout__content" id="main-container">
+
+      <section class="section--center mdl-grid" id="main-content">
+
+        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+          <div class="mdl-tabs__tab-bar">
+            <a href="#map-panel" id="kunyi-map-panel" class="mdl-tabs__tab is-active">Flooded Locations by Townships</a>
+            <a href="#map-panel" id="kokoye-map-panel" class="mdl-tabs__tab">Possible Flooded Locations by Villages</a>
+            
+          </div>
+          <div class="mdl-tabs__panel is-active" id="map-panel">
+            <div id="kunyi-map" width="100%"></div>  
+          </div>
+        </div>
+
+      </section> <!-- end of section#main-content -->
+
+    </main> <!-- end of #main-container -->
+  </div> <!-- end of div.mdl-layout -->
+  <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+  <script src="../js/app.min.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-65871410-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
