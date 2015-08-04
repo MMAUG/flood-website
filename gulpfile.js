@@ -19,6 +19,7 @@ gulp.task('scripts', function() {
   return gulp.src([
     './app/assets/js/jquery-1.11.3.min.js',
     './app/assets/js/marker_clusterer.js',
+    './app/assets/js/marker_with_label_packed.js',
     './app/assets/js/moment.js',
     './app/assets/js/material.min.js',
     './app/assets/js/vue.min.js',

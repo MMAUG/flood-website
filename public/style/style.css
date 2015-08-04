@@ -333,3 +333,14 @@ p {
 #kunyi-map {
   height: 500px;
 }
+
+.mapMarkerLabel{
+  color: red;
+  font-size: 1.1em;
+  font-family: Tharlon
+}
+.mapMarkerDescription{
+  color: green;
+  font-size: 1.1em;
+  font-family: Tharlon
+}
