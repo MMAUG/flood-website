@@ -18,6 +18,7 @@ gulp.task('watch', function(){
 gulp.task('scripts', function() {
   return gulp.src([
     './app/assets/js/jquery-1.11.3.min.js',
+    './app/assets/js/vendor_highmaps.js',
     './app/assets/js/marker_clusterer.js',
     './app/assets/js/moment.js',
     './app/assets/js/material.min.js',
@@ -27,7 +28,8 @@ gulp.task('scripts', function() {
     './app/assets/js/search.js',
     './app/assets/js/campaign-data.js',
     './app/assets/js/app.js',
-    './app/assets/js/floods_map.js'
+    './app/assets/js/floods_map.js',
+    './app/assets/js/dashboard.js'
   ])
   // .pipe(uglify())
   .pipe(concat('app.min.js'))
