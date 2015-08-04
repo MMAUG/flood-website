@@ -288,12 +288,12 @@ var newsForm = new Vue({
 });
 
 // /* Online Donations */
-// var online = new Vue({
-//     el: '#online-donations',
-//     data: {
-//       list: campaigns
-//     }
-// });
+var online = new Vue({
+    el: '#online-donations',
+    data: {
+      list: campaigns
+    }
+});
 
 
 /**
