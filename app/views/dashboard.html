@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/tharlon.css">
   <link rel="stylesheet" href="style/style.css">
 </head>
-<body data-page="donate">
+<body data-page="dashboard">
   <div class="mdl-layout mdl-js-layout">
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
@@ -62,28 +62,75 @@
 </div>
 
     <main class="mdl-layout__content" id="main-container">
-      <section class="section--center mdl-grid" id="main-content">
+      <section class="section--center mdl-grid " id="main-content">
 
         <div class="mdl-title-box mdl-cell--12-col">
-          <h3 class="page-title">Online Donations</h3>
+          <h3 class="page-title">Flooding Areas Monitoring Dashboard</h3>
         </div>
 
-        <div id="online-donations" class="mdl-grid">
+        <div id="flood-dashboard" class="mdl-grid mdl-cell--12-col">
 
-          <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-shadow--2dp" v-repeat="list">
+          <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-shadow--2dp" data-search="keep hope alive charity foundation : 15th intake students of university of computer study yangon(ucsy) organized this foundation since 2013. we also focus to support victims who are in diaster region. : ucsy">
+              <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">Map 1</h2>
+              </div> <!-- end of div.mdl-card__title -->
+
+              <div class="mdl-card__supporting-text">
+                <p class="group-description">Map 1 description</p>
+              </div>
+
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://m.facebook.com/UCSYCHARITYFOUNDATION" target="_blank">
+                  Facebook Link
+                </a>
+                <div class="mdl-layout-spacer"></div>
+
+                <button class="mdl-button mdl-js-button mdl-button--icon show-info">
+                  <i class="material-icons">info</i>
+                </button>
+              </div> <!-- end of div.mdl-card__actions -->
+            </div>
+
+          <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-shadow--2dp" data-search="keep hope alive charity foundation : 15th intake students of university of computer study yangon(ucsy) organized this foundation since 2013. we also focus to support victims who are in diaster region. : ucsy">
             <div class="mdl-card__title mdl-card--expand">
-              <h2 class="mdl-card__title-text">{{ title }}</h2>
-            </div>
-            <div class="mdl-card__supporting-text">
-              
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-              <a href="{{ link }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank">
-                Donate
-              </a>
-            </div>
-          </div>
+              <h2 class="mdl-card__title-text">Map2 here</h2>
+            </div> <!-- end of div.mdl-card__title -->
 
+            <div class="mdl-card__supporting-text">
+              <p class="group-description">Map2 description</p>
+            </div>
+
+            <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://m.facebook.com/UCSYCHARITYFOUNDATION" target="_blank">
+                Facebook Link
+              </a>
+              <div class="mdl-layout-spacer"></div>
+
+              <button class="mdl-button mdl-js-button mdl-button--icon show-info">
+                <i class="material-icons">info</i>
+              </button>
+            </div> <!-- end of div.mdl-card__actions -->
+          </div>
+          <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-shadow--2dp" data-search="keep hope alive charity foundation : 15th intake students of university of computer study yangon(ucsy) organized this foundation since 2013. we also focus to support victims who are in diaster region. : ucsy">
+            <div class="mdl-card__title mdl-card--expand">
+              <h2 class="mdl-card__title-text">Map is here</h2>
+            </div> <!-- end of div.mdl-card__title -->
+
+            <div class="mdl-card__supporting-text">
+              <p class="group-description">Map 3</p>
+            </div>
+
+            <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://m.facebook.com/UCSYCHARITYFOUNDATION" target="_blank">
+                Facebook Link
+              </a>
+              <div class="mdl-layout-spacer"></div>
+
+              <button class="mdl-button mdl-js-button mdl-button--icon show-info">
+                <i class="material-icons">info</i>
+              </button>
+            </div> <!-- end of div.mdl-card__actions -->
+          </div>
         </div> <!-- end of div#online-donations -->
 
       </section> <!-- end of section#main-content -->
