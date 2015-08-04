@@ -36,7 +36,7 @@ $(function(){
     });
     return new MarkerWithLabel({
       position: new google.maps.LatLng(this.latitude, this.longitude),
-      icon: window.location.origin + "/img/home_flood_icon.svg",      
+      icon: window.location.origin + "/img/home_flood_icon.png",      
       labelContent: title,
       labelClass: "mapMarkerLabel", // the CSS class for the label
       labelStyle: {opacity: 0.75},
