@@ -46,4 +46,4 @@ gulp.task('templates', function(){
 
 gulp.task('default', ['scripts', 'templates', 'watch']);
 
-gulp.task('production', ['scripts']);
+gulp.task('production', ['scripts', 'templates']);
