@@ -19,12 +19,12 @@
                     <input class="mdl-textfield__input" type="text" id="title" v-model="title" />
                     <label class="mdl-textfield__label" for="title">Title</label>
                   </div>
-                  <p class="error" v-if="invalidTitle">New title is required</p>
+                  <p class="error" v-if="invalidTitle">News title is required</p>
                   <div class="mdl-textfield mdl-js-textfield new-input">
                     <textarea v-model="description" class="mdl-textfield__input" type="text" rows= "7" id="description" ></textarea>
                     <label class="mdl-textfield__label" for="description">Description</label>
                   </div>
-                  <p class="error" v-if="invalidDescription">New description is required</p>
+                  <p class="error" v-if="invalidDescription">News description is required</p>
 
                   <input type="submit" value="Post" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" v-on="click : postNew">
                   <span v-if="newIsPosting">Posting...</span>
