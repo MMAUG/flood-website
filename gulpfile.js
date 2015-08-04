@@ -26,6 +26,7 @@ gulp.task('scripts', function() {
     './app/assets/js/knayi-myscript.js',
     './app/assets/js/search.js',
     './app/assets/js/campaign-data.js',
+    './app/assets/js/marker_clusterer.js',
     './app/assets/js/app.js',
     './app/assets/js/floods_map.js',
     './app/assets/js/dashboard.js'
