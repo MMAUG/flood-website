@@ -19,6 +19,10 @@ input, textarea, keygen, select {
 p {
 	color: rgba(0, 0, 0, 0.8);
 }
+.site-name {
+	text-decoration: none;
+	color: #fff;
+}
 #download {
 	max-width: 860px;
 	margin: 0 auto;
