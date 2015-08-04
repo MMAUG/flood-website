@@ -19,6 +19,10 @@ input, textarea, keygen, select {
 p {
 	color: rgba(0, 0, 0, 0.8);
 }
+.site-name {
+	text-decoration: none;
+	color: #fff;
+}
 #download {
 	max-width: 860px;
 	margin: 0 auto;
@@ -37,8 +41,8 @@ p {
 	padding: 0;
 	height: 64px;
 }
- #main-container {
-	padding-top: 48px;
+#main-container {
+	/*padding-top: 48px;*/
 }
 #main-content {
 	max-width: 860px;
@@ -291,6 +295,16 @@ p {
   80%, 90% {
     stroke: #ffa700;
   }
+}
+
+#online-donations .mdl-card__title {
+	align-items: flex-start;
+}
+
+#online-donations .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
 }
 
 

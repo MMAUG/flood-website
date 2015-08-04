@@ -4,6 +4,7 @@
   "description": "Flood infromation from Myanmar",
   "main": "index.js",
   "scripts": {
+    "start": "ruby app.rb",
     "build": "gulp",
     "test": "mocha"
   },
@@ -23,10 +24,8 @@
     "gulp-concat": "^2.6.0",
     "gulp-uglify": "^1.2.0",
     "gulp-watch": "^4.3.4",
-    "mocha": "*"
-  },
-  "dependencies": {
     "gulp-ejs": "^1.1.1",
-    "gulp-util": "^3.0.6"
+    "gulp-util": "^3.0.6",
+    "mocha": "^2.2.5"
   }
 }

@@ -6,25 +6,30 @@ configure do
 end
 
 get '/' do
-  send_file File.join('public/app/index.html')
+  send_file File.join('app/views/index.html')
 end
 
 get '/news' do
-  send_file File.join('public/app/news.html')
+  send_file File.join('app/views/news.html')
 end
 
 get '/news-form' do
-  send_file File.join('public/app/news-form.html')
+  send_file File.join('app/views/news-form.html')
 end
 
 get '/form' do
-  send_file File.join('public/app/form.html')
+  send_file File.join('app/views/form.html')
 end
 
+get '/flood-locations' do
+  send_file File.join('app/views/flood-locations-map.html')
+end
+
+# For old links
 get '/flood_locations' do
-  send_file File.join('public/app/flood_locations_map.html')
+  send_file File.join('app/views/flood-locations-map.html')
 end
 
 get '/campaigns' do
-  'Campaigns will be here'
+  send_file File.join('app/views/campaigns.html')
 end

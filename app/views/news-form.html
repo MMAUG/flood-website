@@ -6,19 +6,20 @@
   <title>Myanmar Flood Information</title>
   <meta name="description" content="ေရေဘး သတင္းေတြ ဖတ္ခ်င္တာပဲျဖစ္ျဖစ္၊ ကိုယ္တိုင္ သတင္းေတြ၀ေ မၽွခ်င္တာပဲျဖစ္ျဖစ္ တစ္ေနရာထဲမွာ အလြယ္တကူ ဖတ္လို႔၊ share လို႔ရပါၿပီ။ ဒါ့အျပင္ ကိုယ္တိုင္လွူဒါန္းခ်င္တဲ့သူေတြအတြက္ ဆက္သြယ္လို႔ရမဲ့ အဖြဲ႕ ေတြရဲ့ လိပ္စာေတြ၊ ဖုန္းနံပါတ္ေတြလည္းပါ၀င္ပါတယ္။ ကိုယ္တိုင္လည္း အဖြဲ႕အသစ္ေတြကို ထည့္သြင့္းေပးလို႔ရပါတယ္။">
   <meta name="keywords" content="myanmar,myanmar-flood,flood-2015">
+  <meta property="og:image" content="http://myanmarflood.info/img/metaimage.png" />
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
   <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/tharlon.css">
   <link rel="stylesheet" href="style/style.css">
 </head>
-<body data-page="donate">
+<body data-page="new-form">
   <div class="mdl-layout mdl-js-layout">
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
   <div class="mdl-layout__header-row">
     <!-- Title -->
-    <span class="mdl-layout-title">Myanmar Flood Information</span>
+    <span class="mdl-layout-title"><a href="/" class="site-name">Myanmar Flood Information</a></span>
     <!-- Add spacer, to align navigation to the right -->
     <div class="mdl-layout-spacer"></div>
     
@@ -29,7 +30,7 @@
       </a>
       &nbsp;
       &nbsp;
-      <a href="https://goo.gl/CxXzyH">
+      <a href="http://bit.ly/infocenter-apk-latest">
         <img src="img/download.png" alt="Download Direct">
       </a>
     </div>
@@ -39,25 +40,26 @@
       <nav class="mdl-navigation">
           <a class="mdl-navigation__link is-active" href="/">Donation Groups</a>
       <a class="mdl-navigation__link" href="/news">News</a>
-      <a class="mdl-navigation__link" href="/flood_locations">Flooded Locations</a>
-      <a class="mdl-navigation__link" href="https://www.indiegogo.com/projects/help-flood-victims-in-burma-survive#/story" target="_blank">Help Flood Victims</a>
+      <a class="mdl-navigation__link" href="/flood-locations">Flooded Locations</a>
+      <a class="mdl-navigation__link" href="/campaigns">Online Donations</a>
       </nav>
   </div>
 </header>
+
     
 <div class="mdl-layout__drawer">
   <span class="mdl-layout-title"><img src="img/logo.png" width="32px" alt="Myanmar Flood Information"> Info Center</span>
   <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="/">Donation Groups</a>
         <a class="mdl-navigation__link" href="/news">News</a>
-        <a class="mdl-navigation__link" href="/flood_locations">Flooded Locations</a>
-        <div class="drawer-separator"></div>
-        <a class="mdl-navigation__link" href="https://www.indiegogo.com/projects/help-flood-victims-in-burma-survive#/story" target="_blank">Help Flood Victims</a>
+        <a class="mdl-navigation__link" href="/flood-locations">Flooded Locations</a>
+        <a class="mdl-navigation__link" href="/campaigns">Online Donations</a>
         <div class="drawer-separator"></div>
         <a class="mdl-navigation__link" target="_blank" href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Get it on Play Store</a>
-        <a class="mdl-navigation__link" target="_blank" href="https://goo.gl/CxXzyH">Direct Download Link</a>
+        <a class="mdl-navigation__link" target="_blank" href="http://bit.ly/infocenter-apk-latest">Direct Download Link</a>
   </nav>
 </div>
+
         <main class="mdl-layout__content" id="main-container">
 
           <section class="section--center mdl-grid" id="main-content">
@@ -71,12 +73,12 @@
                     <input class="mdl-textfield__input" type="text" id="title" v-model="title" />
                     <label class="mdl-textfield__label" for="title">Title</label>
                   </div>
-                  <p class="error" v-if="invalidTitle">New title is required</p>
+                  <p class="error" v-if="invalidTitle">News title is required</p>
                   <div class="mdl-textfield mdl-js-textfield new-input">
                     <textarea v-model="description" class="mdl-textfield__input" type="text" rows= "7" id="description" ></textarea>
                     <label class="mdl-textfield__label" for="description">Description</label>
                   </div>
-                  <p class="error" v-if="invalidDescription">New description is required</p>
+                  <p class="error" v-if="invalidDescription">News description is required</p>
 
                   <input type="submit" value="Post" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" v-on="click : postNew">
                   <span v-if="newIsPosting">Posting...</span>

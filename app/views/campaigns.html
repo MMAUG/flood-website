@@ -6,6 +6,7 @@
   <title>Myanmar Flood Information</title>
   <meta name="description" content="ေရေဘး သတင္းေတြ ဖတ္ခ်င္တာပဲျဖစ္ျဖစ္၊ ကိုယ္တိုင္ သတင္းေတြ၀ေ မၽွခ်င္တာပဲျဖစ္ျဖစ္ တစ္ေနရာထဲမွာ အလြယ္တကူ ဖတ္လို႔၊ share လို႔ရပါၿပီ။ ဒါ့အျပင္ ကိုယ္တိုင္လွူဒါန္းခ်င္တဲ့သူေတြအတြက္ ဆက္သြယ္လို႔ရမဲ့ အဖြဲ႕ ေတြရဲ့ လိပ္စာေတြ၊ ဖုန္းနံပါတ္ေတြလည္းပါ၀င္ပါတယ္။ ကိုယ္တိုင္လည္း အဖြဲ႕အသစ္ေတြကို ထည့္သြင့္းေပးလို႔ရပါတယ္။">
   <meta name="keywords" content="myanmar,myanmar-flood,flood-2015">
+  <meta property="og:image" content="http://myanmarflood.info/img/metaimage.png" />
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
@@ -18,7 +19,7 @@
     <header class="mdl-layout__header">
   <div class="mdl-layout__header-row">
     <!-- Title -->
-    <span class="mdl-layout-title">Myanmar Flood Information</span>
+    <span class="mdl-layout-title"><a href="/" class="site-name">Myanmar Flood Information</a></span>
     <!-- Add spacer, to align navigation to the right -->
     <div class="mdl-layout-spacer"></div>
     
@@ -29,7 +30,7 @@
       </a>
       &nbsp;
       &nbsp;
-      <a href="https://goo.gl/CxXzyH">
+      <a href="http://bit.ly/infocenter-apk-latest">
         <img src="img/download.png" alt="Download Direct">
       </a>
     </div>
@@ -39,86 +40,50 @@
       <nav class="mdl-navigation">
           <a class="mdl-navigation__link is-active" href="/">Donation Groups</a>
       <a class="mdl-navigation__link" href="/news">News</a>
-      <a class="mdl-navigation__link" href="/flood_locations">Flooded Locations</a>
-      <a class="mdl-navigation__link" href="https://www.indiegogo.com/projects/help-flood-victims-in-burma-survive#/story" target="_blank">Help Flood Victims</a>
+      <a class="mdl-navigation__link" href="/flood-locations">Flooded Locations</a>
+      <a class="mdl-navigation__link" href="/campaigns">Online Donations</a>
       </nav>
   </div>
 </header>
+
     
 <div class="mdl-layout__drawer">
   <span class="mdl-layout-title"><img src="img/logo.png" width="32px" alt="Myanmar Flood Information"> Info Center</span>
   <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="/">Donation Groups</a>
         <a class="mdl-navigation__link" href="/news">News</a>
-        <a class="mdl-navigation__link" href="/flood_locations">Flooded Locations</a>
-        <div class="drawer-separator"></div>
-        <a class="mdl-navigation__link" href="https://www.indiegogo.com/projects/help-flood-victims-in-burma-survive#/story" target="_blank">Help Flood Victims</a>
+        <a class="mdl-navigation__link" href="/flood-locations">Flooded Locations</a>
+        <a class="mdl-navigation__link" href="/campaigns">Online Donations</a>
         <div class="drawer-separator"></div>
         <a class="mdl-navigation__link" target="_blank" href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Get it on Play Store</a>
-        <a class="mdl-navigation__link" target="_blank" href="https://goo.gl/CxXzyH">Direct Download Link</a>
+        <a class="mdl-navigation__link" target="_blank" href="http://bit.ly/infocenter-apk-latest">Direct Download Link</a>
   </nav>
 </div>
-    <a href="/form" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--2dp" id="add-donation-gp-btn">
-  <i class="material-icons mdl-color-text--white" role="presentation">add</i>
-  <span class="visuallyhidden">add</span>
-</a>
+
     <main class="mdl-layout__content" id="main-container">
       <section class="section--center mdl-grid" id="main-content">
 
-        <div class="mdl-title-box mdl-cell--6-col mdl-cell--12-col-tablet">
-          <h3 class="page-title">Donation Group Lists</h3>
+        <div class="mdl-title-box mdl-cell--12-col">
+          <h3 class="page-title">Online Donations</h3>
         </div>
 
-        <!-- Filter Serach -->
-        <div class="mdl-title-box mdl-cell--6-col mdl-cell--12-col-tablet filter-container">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable 
-                      mdl-textfield--floating-label mdl-textfield--align-right">
-            <label class="mdl-button mdl-js-button mdl-button--icon"
-                 for="search-at-header">
-              <i class="material-icons">search</i>
-            </label>
-            <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" name="sample" id="search-at-header" />
-            </div>
-          </div>
-        </div>
+        <div id="online-donations" class="mdl-grid">
 
-        <div id="donation-groups" class="mdl-grid" v-on="click:update">
-
-          <!-- <h5 class="total" v-if="total">We collect {{ total }} donation group lists.</h5> -->
-
-          <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-shadow--2dp" v-repeat="groups" data-search="{{ title | lowercase }} : {{ description | lowercase }} : {{ donation_location | lowercase }}">
+          <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-shadow--2dp" v-repeat="list">
             <div class="mdl-card__title mdl-card--expand">
               <h2 class="mdl-card__title-text">{{ title }}</h2>
-            </div> <!-- end of div.mdl-card__title -->
-
-            <div class="mdl-card__supporting-text">
-              <p class="group-description">{{ description | truncate 100 }}</p>
             </div>
-
+            <div class="mdl-card__supporting-text">
+              
+            </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-              href="{{ facebook_url }}" target="_blank" v-if="facebook_url">
-                Facebook Link
+              <a href="{{ link }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank">
+                Donate
               </a>
-              <div class="mdl-layout-spacer"></div>
-
-              <button class="mdl-button mdl-js-button mdl-button--icon show-info" v-on="click : showDetailBox(description, phone_numbers, donation_location)">
-                <i class="material-icons">info</i>
-              </button>
-            </div> <!-- end of div.mdl-card__actions -->
-          </div> <!-- end of div.mdl-card -->
-
-          <!-- Show loading text and hide after data are ready -->
-          <div id="loading" v-if="loading">
-            <!-- http://codepen.io/jczimm/pen/vEBpoL -->
-            <svg class="circular">
-                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-            </svg>
-            <!-- <h4>Loading ...</h4> -->
+            </div>
           </div>
 
-        </div> <!-- end of div#donation-groups -->
+        </div> <!-- end of div#online-donations -->
 
       </section> <!-- end of section#main-content -->
     </main>

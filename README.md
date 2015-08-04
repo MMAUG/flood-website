@@ -15,12 +15,20 @@ Credits
 Development
 -----------
 
+Before start, We use gulp to handle automate
+
+```bash
+$ npm install gulp -g
+```
+
 Install ruby with [rvm](http://rvm.io), if you haven't.
 
 ```bash
 $ git clone https://github.com/MMAUG/flood-website
 $ cd flood-website
 $ bundle install
+$ npm install
+$ gulp
 $ ruby app.rb
 ```
 
