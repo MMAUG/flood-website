@@ -363,3 +363,10 @@ p {
   font-size: 1.1em;
   font-family: Tharlon
 }
+
+#about-us {
+	border-radius: 2px;
+	padding: 80px 56px;
+	margin-bottom: 80px;
+	width: 100%;
+}

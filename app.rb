@@ -33,3 +33,7 @@ end
 get '/campaigns' do
   send_file File.join('app/views/campaigns.html')
 end
+
+get '/about-us' do
+  send_file File.join('app/views/about.html')
+end
