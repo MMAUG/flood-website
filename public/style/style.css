@@ -45,7 +45,7 @@ p {
 	/*padding-top: 48px;*/
 }
 #main-content {
-  overflow: hidden;
+  	overflow: hidden;
 	max-width: 860px;
 }
 .page-title {
@@ -54,6 +54,11 @@ p {
 }
 .mdl-navigation__link {
 	font-size:16px;
+	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box;
+  	border-bottom: 3px solid transparent;
+  	height: 64px;
 }
 
 .mdl-layout__drawer .mdl-layout-title {
@@ -362,4 +367,14 @@ p {
   color: green;
   font-size: 1.1em;
   font-family: Tharlon
+}
+
+.donate .nav-layout .donate,
+.donate-form .nav-layout .donate, 
+.news .nav-layout .news,
+.map .nav-layout .map,
+.news-form .nav-layout .news,
+.online_donation .nav-layout .online_donation{
+   opacity: 1;
+   border-bottom-color: #ffffff;
 }
