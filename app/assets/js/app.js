@@ -98,6 +98,11 @@
             info.donation_location = kny.syllbreak( kny.fontConvert(info.donation_location, "unicode5"), "unicode5");
             info.phone_numbers = kny.syllbreak( kny.fontConvert(info.phone_numbers, "unicode5"), "unicode5");
             info.description = info.description.replace(/\n/g, "</br>");
+
+            info.title = info.title.replace(/<script[^>]*>[^<]*<\/script>/g, "");
+            info.description = info.description.replace(/<script[^>]*>[^<]*<\/script>/g, "");
+            info.phone_numbers = info.phone_numbers.replace(/<script[^>]*>[^<]*<\/script>/g, "");
+            info.donation_location = info.donation_location.replace(/<script[^>]*>[^<]*<\/script>/g, "");
             return info;
           }).reverse();
 
@@ -224,6 +229,9 @@
             info.title = kny.syllbreak( kny.fontConvert(info.title, "unicode5"), "unicode5");
             info.description = kny.syllbreak( kny.fontConvert(info.description, "unicode5"), "unicode5");
             info.description = info.description.replace(/\n/g, "</br>");
+
+            info.title = info.title.replace(/<script[^>]*>[^<]*<\/script>/g, "");
+            info.description = info.description.replace(/<script[^>]*>[^<]*<\/script>/g, "");
             return info;
           });
 
