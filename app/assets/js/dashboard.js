@@ -11,8 +11,14 @@ var map_maphelper={
 	        },
 
 	        tooltip: {
-	            headerFormat: '',
-	            pointFormat: '<b>{point.name}</b><br>Lat: {point.lat}, Lon: {point.lon}</br> <b>{point:state}</b>'
+	            //headerFormat: '',
+	            //pointFormat: '<b>{point.name}</b><br>Lat: {point.lat}, Lon: {point.lon}</br> <b>{point:total_population}</b>',
+	            formatter:function(){
+	            	return "<b>State :</b>"+this.point.state+
+	            	"<br><b>Latitude :</b>"+this.point.lat+
+	            	"<br><b>Longitude :</b>"+this.point.lon+
+	            	"<br><b>Total Population :</b>"+this.point.total_population;
+	            }
 	        },
 
 	        series: mapObject.mapseries
