@@ -3,6 +3,7 @@
   var baseURL = 'https://floodinfo-myanmar.herokuapp.com/api/v2/';
   var donationGroupURL = baseURL + 'donation_groups';
   var newsURL = baseURL + 'newsfeeds';
+  var HTMLTAGS = /<[\w]+\b[^>]*>(.*?)<\/[\w]+>/g;
 
   /**
    * JQuery Helper functions
@@ -99,10 +100,10 @@
             info.phone_numbers = kny.syllbreak( kny.fontConvert(info.phone_numbers, "unicode5"), "unicode5");
             info.description = info.description.replace(/\n/g, "</br>");
 
-            info.title = info.title.replace(/<script[^>]*>[^<]*<\/script>/g, "");
-            info.description = info.description.replace(/<script[^>]*>[^<]*<\/script>/g, "");
-            info.phone_numbers = info.phone_numbers.replace(/<script[^>]*>[^<]*<\/script>/g, "");
-            info.donation_location = info.donation_location.replace(/<script[^>]*>[^<]*<\/script>/g, "");
+            info.title = info.title.replace(HTMLTAGS, "");
+            info.de[\w]+ion = info.de[\w]+ion.replace(HTMLTAGS, "");
+            info.phone_numbers = info.phone_numbers.replace(HTMLTAGS, "");
+            info.donation_location = info.donation_location.replace(HTMLTAGS, "");
             return info;
           }).reverse();
 
@@ -230,8 +231,8 @@
             info.description = kny.syllbreak( kny.fontConvert(info.description, "unicode5"), "unicode5");
             info.description = info.description.replace(/\n/g, "</br>");
 
-            info.title = info.title.replace(/<script[^>]*>[^<]*<\/script>/g, "");
-            info.description = info.description.replace(/<script[^>]*>[^<]*<\/script>/g, "");
+            info.title = info.title.replace(HTMLTAGS, "");
+            info.description = info.description.replace(HTMLTAGS, "");
             return info;
           });
 
