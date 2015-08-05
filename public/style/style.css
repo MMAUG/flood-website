@@ -54,6 +54,11 @@ p {
 }
 .mdl-navigation__link {
 	font-size:16px;
+	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box;
+  	border-bottom: 3px solid transparent;
+  	height: 64px;
 }
 
 .mdl-layout__drawer .mdl-layout-title {
@@ -370,3 +375,14 @@ p {
 	margin-bottom: 80px;
 	width: 100%;
 }
+
+.donate .nav-layout .donate,
+.donate-form .nav-layout .donate, 
+.news .nav-layout .news,
+.map .nav-layout .map,
+.news-form .nav-layout .news,
+.online-donation .nav-layout .online-donation,
+.about .nav-layout .about{
+   opacity: 1;
+   border-bottom-color: #ffffff;
+}   
