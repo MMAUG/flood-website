@@ -15,24 +15,26 @@ Credits
 Development
 -----------
 
-Before start, We use gulp to handle automate
+Insatll `nodejs` and `npm` first
+After that install gulp
 
 ```bash
 $ npm install gulp -g
 ```
 
-Install ruby with [rvm](http://rvm.io), if you haven't.
+Run gulp, it will watch file changes
 
 ```bash
-$ git clone https://github.com/MMAUG/flood-website
-$ cd flood-website
-$ bundle install
-$ npm install
 $ gulp
-$ ruby app.rb
 ```
 
-The app should be running at `http://localhost:4567`
+Run application
+
+```bash
+$ npm start
+```
+
+The app should be running at `http://localhost:3000`
 
 
 Contributing
