@@ -19,8 +19,10 @@ gulp.task('scripts', function() {
   return gulp.src([
     './app/assets/js/jquery-1.11.3.min.js',
     './app/assets/js/vendor_highmaps.js',
+
     './app/assets/js/geojson_collection.js',
     './app/assets/js/marker_clusterer.js',
+
     './app/assets/js/moment.js',
     './app/assets/js/material.min.js',
     './app/assets/js/vue.min.js',
@@ -28,6 +30,7 @@ gulp.task('scripts', function() {
     './app/assets/js/knayi-myscript.js',
     './app/assets/js/search.js',
     './app/assets/js/campaign-data.js',
+    './app/assets/js/marker_clusterer.js',
     './app/assets/js/app.js',
     './app/assets/js/floods_map.js',
     './app/assets/js/dashboard.js'
@@ -47,4 +50,4 @@ gulp.task('templates', function(){
 
 gulp.task('default', ['scripts', 'templates', 'watch']);
 
-gulp.task('production', ['scripts']);
+gulp.task('production', ['scripts', 'templates']);

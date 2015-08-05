@@ -43,7 +43,11 @@
       <a class="mdl-navigation__link" href="/news">News</a>
       <a class="mdl-navigation__link" href="/flood-locations">Flooded Locations</a>
       <a class="mdl-navigation__link" href="/campaigns">Online Donations</a>
+
       <a class="mdl-navigation__link" href="/dashboard">Dashboard</a>
+
+      <a class="mdl-navigation__link" href="/about-us">About Us</a>
+
       </nav>
   </div>
 </header>
@@ -56,6 +60,7 @@
         <a class="mdl-navigation__link" href="/news">News</a>
         <a class="mdl-navigation__link" href="/flood-locations">Flooded Locations</a>
         <a class="mdl-navigation__link" href="/campaigns">Online Donations</a>
+        <a class="mdl-navigation__link" href="/about-us">About Us</a>
         <div class="drawer-separator"></div>
         <a class="mdl-navigation__link" target="_blank" href="https://play.google.com/store/apps/details?id=org.mmaug.InfoCenter">Get it on Play Store</a>
         <a class="mdl-navigation__link" target="_blank" href="http://bit.ly/infocenter-apk-latest">Direct Download Link</a>
@@ -96,7 +101,7 @@
               <h2 class="mdl-card__title-text"> {{ title }} </h2>
             </div> <!-- end of div.mdl-card__title -->
             <div class="mdl-card__supporting-text">
-              <p>{{ description }}</p>
+              <p v-html="description"></p>
             </div> <!-- end of div.mdl-card__supporting-text -->
             <div class="mdl-card__actions mdl-card--border">
               <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
