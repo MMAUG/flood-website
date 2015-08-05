@@ -166,6 +166,7 @@ var dashboard_arr_parser={"decomposer":function(Array_data){
 				//console.log(kunyi_data[indez].demographic);
 				//console.log(kunyi_data[indez].demographic.total_female);
 				}
+				console.log("fired");
 				console.log(arr_population);
 				obj_population_tiles.data= arr_population;
 
