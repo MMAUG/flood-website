@@ -4,8 +4,9 @@
   "description": "Flood infromation from Myanmar",
   "main": "index.js",
   "scripts": {
-    "start": "ruby app.rb",
-    "build": "gulp",
+    "prestart": "npm install && gulp production",
+    "start": "bundle exec ruby app.rb -p $PORT",
+    "build": "gulp production",
     "test": "mocha"
   },
   "repository": {

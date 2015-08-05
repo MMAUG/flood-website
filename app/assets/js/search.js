@@ -1,49 +1,72 @@
-var $REG_URL = /((https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?)/g;
+(function(global){
+  
+  global.pageinfo = document.body.getAttribute("data-page");
 
-var alias = [
-  ["bago", "ပဲခူး"],
-  ["rakhing", "ရခိုင်"],
-  ["kayin", "ကရင်"],
-  ["ayeyarwaddy", "ဧရာ၀တီ", "ဧရာဝတီ"],
-  ["tanaintharyi", "တနင်္သာရီ"]
-];
+  var $REG_URL = /((https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?)/g;
+  var $keywords = [];
+  var $cards;
+  var searchBox = $("#search-at-header");
 
-$("#search-at-header").on('keyup', function(event){
-  var that = $(this);
-  var typped = that.val();
-  typped = typped.toLowerCase();
-  var keywords = [];
+  if(pageinfo === "donate")
+    $cards = "#donation-groups .mdl-card";
+  else if(pageinfo === "news")
+    $cards = "#news .mdl-card";
+  else
+    $cards = null;
 
-  typped.split(" ").forEach(function(keyword){
-    var aliasfound = false;
-    alias.forEach(function(alia){
-      if( alia.indexOf(keyword) !== -1 ){
-        aliasfound = true;
-        keywords = keywords.concat(alia);
+  var alias = [
+    ["bago", "ပဲခူး"],
+    ["rakhing", "ရခိုင်"],
+    ["kayin", "ကရင်"],
+    ["ayeyarwaddy", "ဧရာ၀တီ", "ဧရာဝတီ"],
+    ["tanaintharyi", "တနင်္သာရီ"]
+  ];
+
+  function searchOnPage(){
+    var typped = searchBox.val().trim();
+    if(!$cards)
+      return false;
+
+    if(typped.length === 0){
+      if( $keywords.length === 1 ) {
+        $($cards).show(400);
+        $keywords = [];
+      }
+      return false;
+    }
+
+    $keywords = [];
+    typped = typped.toLowerCase();
+
+    typped.split(" ").forEach(function(keyword){
+      var aliasfound = false;
+      alias.forEach(function(alia){
+        if( alia.indexOf(keyword) !== -1 ){
+          aliasfound = true;
+          $keywords = $keywords.concat(alia);
+        }
+      });
+      if(!aliasfound){
+        $keywords.push(keyword);
       }
     });
-    if(!aliasfound){
-      keywords.push(keyword);
-    }
-  });
 
-  keywords = keywords.join("|");
+    var keywords = $keywords.join("|");
 
-  $("#donation-groups .mdl-card").each(function(index, card){
-    card = $(card);
-    if( !card.attr("data-search").match(keywords, "gi") ) {
-      card.hide(400);
-    } else {
-      card.show(400);
-    }
-  });
+    $($cards).each(function(index, card){
+      card = $(card);
+      if( !card.attr("data-search").match(keywords) ){
+        card.hide(400);
+      } else {
+        card.show(400);
+      }
+    });
 
-  $("#new-feed .mdl-card").each(function(index, card){
-    card = $(card);
-    if( !card.attr("data-search").match(keywords, "gi") ) {
-      card.hide(400);
-    } else {
-      card.show(400);
-    }
-  });
-});
+    setTimeout(scrolledCheck, 400);
+  }
+
+  global.searchOnPage = searchOnPage;
+
+  $("#search-at-header").on('keyup', searchOnPage);
+
+}(this));

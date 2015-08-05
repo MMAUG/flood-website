@@ -30,12 +30,10 @@ get '/flood_locations' do
   send_file File.join('app/views/flood-locations-map.html')
 end
 
-get '/dashboard' do
-  send_file File.join('app/views/dashboard.html')
-end
-
-
-
 get '/campaigns' do
   send_file File.join('app/views/campaigns.html')
+end
+
+get '/about-us' do
+  send_file File.join('app/views/about.html')
 end

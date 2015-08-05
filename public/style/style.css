@@ -45,6 +45,7 @@ p {
 	/*padding-top: 48px;*/
 }
 #main-content {
+  overflow: hidden;
 	max-width: 860px;
 }
 .page-title {
@@ -298,13 +299,31 @@ p {
 }
 
 #online-donations .mdl-card__title {
-	align-items: flex-start;
+	background-color:#3F51B5;
+	color:#fff;
+	height: 102px;
 }
 
-#online-donations .mdl-card__actions {
-    display: flex;
-    box-sizing:border-box;
-    align-items: center;
+#online-donations .mdl-card__title-text {
+	z-index: 1;
+}
+
+#online-donations .md-card__actions {
+	display: flex;
+	box-sizing:border-box;
+	align-items: center;
+}
+
+#online-donations .mdl-card__title.has-img:before {
+    content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #000;
+	opacity: .4;
+	height: 102px;
 }
 
 
@@ -332,4 +351,22 @@ p {
 
 #kunyi-map {
   height: 500px;
+}
+
+.mapMarkerLabel{
+  color: red;
+  font-size: 1.1em;
+  font-family: Tharlon
+}
+.mapMarkerDescription{
+  color: green;
+  font-size: 1.1em;
+  font-family: Tharlon
+}
+
+#about-us {
+	border-radius: 2px;
+	padding: 56px;
+	margin-bottom: 80px;
+	width: 100%;
 }
