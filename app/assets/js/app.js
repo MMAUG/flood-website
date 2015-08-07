@@ -51,6 +51,7 @@
 
     methods: {
       showDetailBox: function(description, phone_numbers, donation_location) {
+        ga('send', 'event', 'button', 'click', 'open-detail-box');
         var template = '<div class="modal mdl-shadow--2dp" id="group-modal">' +
                           '<div class="modal-content">' +
                             '<h4>Description</h4>' +
@@ -71,6 +72,7 @@
         b.append('<div id="overlay"></div>');
 
         $('#close-modal').on('click', function() {
+          ga('send', 'event', 'button', 'click', 'close-detail-box');
           closeModel();
         });
       },
@@ -199,7 +201,7 @@
 
     methods: {
       reportNew: function (id) {
-
+        ga('send', 'event', 'button', 'click', 'report-button');
         var reportURL = newsURL + '/' + id + '/report_as_spam';
 
         this.$http.get(reportURL, function(data, status, request) {
@@ -322,6 +324,7 @@
     var height = mainContent.height() - 50;
 
     if( sheight > height) {
+      ga('send', 'event', 'page', 'scroll', 'scroll-down');
       switch(pageinfo){
         case "donate":
           donationGroup.update();

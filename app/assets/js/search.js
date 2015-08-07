@@ -67,6 +67,9 @@
 
   global.searchOnPage = searchOnPage;
 
-  $("#search-at-header").on('keyup', searchOnPage);
+  $("#search-at-header").on('keyup', function(event){
+    ga('send', 'event', 'keyboard', 'keyup', 'search-box');
+    searchOnPage();
+  });
 
 }(this));

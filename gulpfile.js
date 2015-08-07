@@ -24,7 +24,8 @@ gulp.task('scripts', function() {
     './app/assets/js/search.js',
     './app/assets/js/campaign-data.js',
     './app/assets/js/app.js',
-    './app/assets/js/dashboard.js'
+    './app/assets/js/dashboard.js',
+    './app/assets/js/eventTracker.js'
   ])
   // .pipe(uglify())
   .pipe(concat('app.min.js'))
