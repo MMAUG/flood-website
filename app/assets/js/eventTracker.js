@@ -5,8 +5,7 @@
 
   $("[data-ga]").click(function(event){
     var args = ['send', 'event'];
-    args.concat( $(this).attr('data-ga').split("|") );
-    console.log(args);
+    args = args.concat( $(this).attr('data-ga').split("|") );
     ga.apply(null, args);
   });
 }());
