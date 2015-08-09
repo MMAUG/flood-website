@@ -1,0 +1,82 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+/* TEAM */
+
+	Developer: Ye Lin Aung
+	Twitter: @yelinaung
+	Location: Yangon, Myanmar
+
+	Frontend Developer: Nyan Lynn Htut
+	Twitter: @NyanLynnHtut
+	Location: Yangon, Myanmar
+
+	Frontend Developer: Pwint Phyu Kyaw (Li Jia Li)
+	Twitter: @EyeOfDragonLi
+	Location: Yangon, Myanmar
+
+	Frontend Developer: Thuya Myo Nyunt
+	Twitter: @thuyamyonyunt
+	Location: Yangon, Myanmar
+
+	Frontend Developer: Chan Myae San Hlaing
+	Twitter: @jjrofriloc
+	Location: Yangon, Myanmar
+
+	Frontend Developer: Win Htaik Aung
+	Twitter: @winhtaikaung
+	Location: Yangon, Myanmar
+
+	Frontend Developer: Set Kyar Wa Lar
+	Twitter: @setkyarwalar
+	Location: Yangon, Myanmar
+
+	Frontend Developer: Arkar Aung
+	Twitter: @darkar1001
+	Location: Yangon, Myanmar
+
+	Backend Developer: Thiha Tun
+	Twitter: @alt332
+	Location: Yangon, Myanmar
+
+	Backend Developer: Kaung Htet Zaw
+	Twitter: @khzaw
+	Location: Singapore, Singapore
+
+	Backend Developer: Thar Htet
+	Twitter: @kotharthar
+	Location: Yangon, Myanmar
+
+	Backend Developer: Ravi Chabra
+	Twitter: @ravichhabra
+	Location: Yangon, Myanmar
+
+	Android Developer: Swan Htet Aung
+	Twitter: @swanhtet1992
+	Location: Yangon, Myanmar
+
+	Android Developer: Ye Myat Thu
+	Twitter: @pichigui
+	Location: Yangon, Myanmar
+
+	Android Developer: Ye Mon Kyaw
+	Twitter: @yemonkyawlay
+	Location: Yangon, Myanmar
+
+	Android Developer: Poe Poe Myint Swe
+	Twitter: @PoePoeMyintSwe
+	Location: Singapore, Singapore						
+
+							
+/* THANKS */
+
+							
+	Map Data: Ye Min Oo (Ko Ko Ye)
+	Twitter: @kokoye2007
+	Location: Yangon, Myanmar
+
+	Map Data: Kyaw Naing Win                   
+                            
+# TECHNOLOGY COLOPHON
+
+  HTML5, CSS3, VueJs, jQuery, Moment, Kanyi, Material Design Lite, Google Map, Google Analytics
