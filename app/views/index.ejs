@@ -7,7 +7,7 @@
     <% include partials/topbar %>
     <% include partials/drawer %>
     <%- include('partials/material_add_button', {addUrl: 'form'}) %>
-    <main class="mdl-layout__content" id="main-container" ng-controller="OrganizationCtrl">
+    <main class="mdl-layout__content" id="main-container">
 
       <section class="section--center mdl-grid" id="main-content">
 
@@ -29,9 +29,9 @@
           </div>
         </div>
 
-        <div id="donation-groups" class="mdl-grid" scrolled-handler="nextPage()" scrolled-container="#main-container" scrolled-content="#main-content">
+        <div id="donation-groups" ng-controller="OrganizationCtrl">
 
-          <div  class="mdl-grid" style="min-height:500px;" >
+          <div class="mdl-grid" id="scrolled-area" scrolled-handler="nextPage()" scrolled-container="#main-container" scrolled-content="#main-content">
 
           <h5 class="total">We collect {{ total }} donation group lists.</h5>
 
