@@ -1,59 +1,60 @@
 'use strict';
 
+function knyMiddleware(context){
+  return kny.syllbreak( kny.fontConvert(context, "unicode5"), "unicode5");
+}
+
 angular.module('MyanmarFlood')
-	.controller('OrganizationCtrl', ['$scope', 'Organization', function ($scope, Organization) {
-		// Initial scope data
-		$scope.organizations = [];
-		$scope.total = null;
-    $scope.loading = false;
-    $scope.currentPage = 1;
+.controller('OrganizationCtrl', ['$scope', 'Organization', function ($scope, Organization) {
 
-    $scope.init =  function () {
-    	fetchOrganizationData();
-    }
+  // Initial scope data
+  $scope.organizations = [];
+  $scope.total = null;
+  $scope.loading = false;
+  $scope.currentPage = 1;
 
-    $scope.init();
+  $scope.init =  function () {
+    fetchOrganizationData();
+  }
 
-    $scope.nextPage = function() {
-    	fetchOrganizationData();
-    }
+  $scope.init();
 
-    // Fetch organization data from api server.
-    function fetchOrganizationData() {
-    	$scope.loading = true;
+  $scope.nextPage = function() {
+    fetchOrganizationData();
+  }
 
-    	console.log($scope.organizations.length);
+  // Fetch organization data from api server.
+  function fetchOrganizationData() {
+    $scope.loading = true;
 
-    	Organization.paginate($scope.currentPage).then(function (response) {
+    Organization.paginate($scope.currentPage).then(function (response) {
         responseSuccess(response);
-      });
-    }
+    });
+  }
 
-    // Callback function after http request is success.
-    function responseSuccess(response) {
-    	var data = response.data.data;
-    	$scope.total = response.data.meta.total_count;
+  // Callback function after http request is success.
+  function responseSuccess(response) {
+    var data = response.data.data;
+    $scope.total = response.data.meta.total_count;
+    $scope.currentPage = $scope.currentPage + 1;
 
-    	$scope.currentPage = $scope.currentPage + 1;
+    data = data.map(function(info){
 
-    	data = data.map(function(info){
-        info.title = kny.syllbreak( kny.fontConvert(info.title, "unicode5"), "unicode5");
-        info.description = kny.syllbreak( kny.fontConvert(info.description, "unicode5"), "unicode5");
-        info.donation_location = kny.syllbreak( kny.fontConvert(info.donation_location, "unicode5"), "unicode5");
-        info.phone_numbers = kny.syllbreak( kny.fontConvert(info.phone_numbers, "unicode5"), "unicode5");
+      info.title = knyMiddleware(info.title);
+      info.description = knyMiddleware(info.description);
+      info.donation_location = knyMiddleware(info.donation_location);
+      info.phone_numbers = knyMiddleware(info.phone_numbers);
 
-        //info.title = info.title.replace(HTMLTAGS, "");
-        //info.description = info.description.replace(HTMLTAGS, "");
-        //info.phone_numbers = info.phone_numbers.replace(HTMLTAGS, "");
-        //info.donation_location = info.donation_location.replace(HTMLTAGS, "");
+      //info.title = info.title.replace(HTMLTAGS, "");
+      //info.description = info.description.replace(HTMLTAGS, "");
+      //info.phone_numbers = info.phone_numbers.replace(HTMLTAGS, "");
+      //info.donation_location = info.donation_location.replace(HTMLTAGS, "");
 
-        info.description = info.description.replace(/\n/g, "</br>");
+      info.description = info.description.replace(/\n/g, "</br>");
+      return info;
+    });
 
-        return info;
-      });
-
-      $scope.loading = false;
-
-    	$scope.organizations = $scope.organizations.concat(data);
-    }
-	}]);
+    $scope.loading = false;
+    $scope.organizations = $scope.organizations.concat(data);
+  }
+}]);
