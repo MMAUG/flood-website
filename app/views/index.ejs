@@ -2,7 +2,6 @@
 <html lang="en" ng-app="MyanmarFlood" >
 <% include partials/head %>
 <body class="donate" data-page="donate">
-  <div class="mdl-layout mdl-js-layout">
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <% include partials/topbar %>
     <% include partials/drawer %>
@@ -33,43 +32,40 @@
 
           <div class="mdl-grid" id="scrolled-area" scrolled-handler="nextPage()" scrolled-container="#main-container" scrolled-content="#main-content">
 
-          <h5 class="total">We collect {{ total }} donation group lists.</h5>
+            <h5 class="total">We collect {{ total }} donation group lists.</h5>
 
-          <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-shadow--2dp"
-               ng-repeat="group in organizations">
-            <div class="mdl-card__title mdl-card--expand">
-              <h2 class="mdl-card__title-text" ng-bind-html="group.title"></h2>
-            </div> <!-- end of div.mdl-card__title -->
+            <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-shadow--2dp"
+                 ng-repeat="group in organizations">
+              <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text" ng-bind-html="group.title"></h2>
+              </div> <!-- end of div.mdl-card__title -->
 
-            <div class="mdl-card__supporting-text">
-              <p class="group-description" ng-bind-html="group.description | limitTo:110"></p>
-            </div>
+              <div class="mdl-card__supporting-text">
+                <p class="group-description" ng-bind-html="group.description | limitTo:110"></p>
+              </div>
 
-            <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-              href="{{ group.facebook_url }}" target="_blank" ng-show="group.facebook_url != ''">
-                Facebook Link
-              </a>
-              <div class="mdl-layout-spacer"></div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                href="{{ group.facebook_url }}" target="_blank" ng-show="group.facebook_url != ''">
+                  Facebook Link
+                </a>
+                <div class="mdl-layout-spacer"></div>
 
-              <button class="mdl-button mdl-js-button show-info"
-                  v-on="click : showDetailBox(description, phone_numbers, donation_location)">
-                Detail
-              </button>
-            </div> <!-- end of div.mdl-card__actions -->
-          </div> <!-- end of div.mdl-card -->
+                <button class="mdl-button mdl-js-button show-info"
+                    show-detail-box="click : showDetailBox(description, phone_numbers, donation_location)">
+                  Detail
+                </button>
+              </div> <!-- end of div.mdl-card__actions -->
+            </div> <!-- end of div.mdl-card -->
 
-          <!-- Show loading text and hide after data are ready -->
-          <div id="loading" ng-show="loading">
-            <!-- http://codepen.io/jczimm/pen/vEBpoL -->
-            <svg class="circular">
+            <!-- Show loading text and hide after data are ready -->
+            <div id="loading" ng-show="loading">
+              <svg class="circular">
                 <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-            </svg>
+              </svg>
+            </div>
           </div>
-          </div>
-
         </div> <!-- end of div#donation-groups -->
-
       </section> <!-- end of section#main-content -->
     </main>
   </div> <!-- end of div.mdl-layout -->

@@ -20,7 +20,8 @@ angular.module('MyanmarFlood')
   $scope.init();
 
   $scope.nextPage = function() {
-    fetchOrganizationData();
+    if(!$scope.loading)
+      fetchOrganizationData();
   }
 
   // Fetch organization data from api server.
@@ -28,7 +29,7 @@ angular.module('MyanmarFlood')
     $scope.loading = true;
 
     Organization.paginate($scope.currentPage).then(function (response) {
-        responseSuccess(response);
+      responseSuccess(response);
     });
   }
 
@@ -39,16 +40,10 @@ angular.module('MyanmarFlood')
     $scope.currentPage = $scope.currentPage + 1;
 
     data = data.map(function(info){
-
       info.title = knyMiddleware(info.title);
       info.description = knyMiddleware(info.description);
       info.donation_location = knyMiddleware(info.donation_location);
       info.phone_numbers = knyMiddleware(info.phone_numbers);
-
-      //info.title = info.title.replace(HTMLTAGS, "");
-      //info.description = info.description.replace(HTMLTAGS, "");
-      //info.phone_numbers = info.phone_numbers.replace(HTMLTAGS, "");
-      //info.donation_location = info.donation_location.replace(HTMLTAGS, "");
 
       info.description = info.description.replace(/\n/g, "</br>");
       return info;
