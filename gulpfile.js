@@ -20,6 +20,7 @@ var APP_JS_LISTS = [
   NODE_JS_PATH + 'angular/angular.min.js',
   NODE_JS_PATH + 'angular-sanitize/angular-sanitize.min.js',
   APP_JS_PATH + 'knayi-myscript.js',
+  APP_JS_PATH + 'utils.js',
   APP_JS_PATH + 'directives/scrolled-handler.js',
   APP_JS_PATH + 'app.js',
   APP_JS_PATH + 'services/organization.js',
