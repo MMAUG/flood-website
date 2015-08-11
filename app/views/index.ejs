@@ -46,13 +46,13 @@
 
               <div class="mdl-card__actions mdl-card--border">
                 <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                href="{{ group.facebook_url }}" target="_blank" ng-show="group.facebook_url != ''">
+                   href="{{ group.facebook_url }}" target="_blank" ng-show="group.facebook_url != ''">
                   Facebook Link
                 </a>
                 <div class="mdl-layout-spacer"></div>
 
                 <button class="mdl-button mdl-js-button show-info"
-                    show-detail-box="click : showDetailBox(description, phone_numbers, donation_location)">
+                        ng-click="showDetailBox($index)">
                   Detail
                 </button>
               </div> <!-- end of div.mdl-card__actions -->
@@ -68,6 +68,27 @@
         </div> <!-- end of div#donation-groups -->
       </section> <!-- end of section#main-content -->
     </main>
+    
+    <div ng-controller="ModalboxCtrl">
+
+      <div class="modal-box" ng-show="box.show" class="ng-hide">
+        <div class="modal mdl-shadow--2dp">
+          <div class="modal-content">
+            <h3>Description</h3>
+            <p ng-bind-html="box.description"></p>
+            <h4>Phone Numbers</h4>
+            <p> {{ box.phone_numbers }} </p>
+            <h4>Location</h4>
+            <p> {{ box.donation_location }} </p>
+          </div>
+          <div class="modal-footer">
+            <button class="mdl-button mdl-js-button" ng-click="closeBox()">Close</button>
+          </div>
+        </div>
+        <div id="overlay" ng-click="closeBox()"></div>
+      </div>
+    </div>
+
   </div> <!-- end of div.mdl-layout -->
   <% include partials/scripts %>
 </body>
