@@ -5,7 +5,15 @@ function knyMiddleware(context){
 }
 
 angular.module('MyanmarFlood')
-.controller('OrganizationCtrl', ['$scope', 'Organization', function ($scope, Organization) {
+.run(function($rootScope){
+  $rootScope.box = {
+    show: null,
+    description: null,
+    phone_numbers: null,
+    donation_location: null
+  }
+})
+.controller('OrganizationCtrl', ['$scope', '$rootScope', 'Organization', function ($scope, $rootScope, Organization) {
 
   // Initial scope data
   $scope.organizations = [];
@@ -33,6 +41,13 @@ angular.module('MyanmarFlood')
     });
   }
 
+  $scope.showDetailBox = function (index){
+    $rootScope.box.show = true;
+    $rootScope.box.description = $scope.organizations[index].description;
+    $rootScope.box.phone_numbers = $scope.organizations[index].phone_numbers;
+    $rootScope.box.donation_location = $scope.organizations[index].donation_location;
+  }
+
   // Callback function after http request is success.
   function responseSuccess(response) {
     var data = response.data.data;
@@ -52,4 +67,11 @@ angular.module('MyanmarFlood')
     $scope.loading = false;
     $scope.organizations = $scope.organizations.concat(data);
   }
+}])
+.controller('ModalboxCtrl', ['$scope', '$rootScope', 'Modalbox', function ($scope, $rootScope, Modalbox) {
+
+  $scope.closeBox = function(){
+    $rootScope.box.show = null;
+  }
+
 }]);

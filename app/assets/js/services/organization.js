@@ -7,4 +7,8 @@ angular.module('MyanmarFlood')
 			return $http.get(API_URL + 'donation_groups?page=' + page);
 		}
 	}
-}]);
+}])
+.factory('Modalbox', function ($http, API_URL) {
+  return {}
+});
+
