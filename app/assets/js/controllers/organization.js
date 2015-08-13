@@ -28,8 +28,7 @@ angular.module('MyanmarFlood')
   $scope.init();
 
   $scope.nextPage = function() {
-    if(!$scope.loading)
-      fetchOrganizationData();
+    fetchOrganizationData();
   }
 
   // Fetch organization data from api server.

@@ -56,7 +56,9 @@ var PAGES = {
     ['floods_map.js'],
     [__MARKER_WITH_LABEL, __MARKER_CULSTERER]),
 
-  "campaigns": concatDefault(DEFAULT),
+  "campaigns": concatDefault(DEFAULT, 
+    ['services/campaigns.js', 'controllers/campaigns.js']),
+
   "about": concatDefault(DEFAULT)
 };
 
