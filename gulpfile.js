@@ -62,48 +62,10 @@ var PAGES = {
   "about": concatDefault(DEFAULT)
 };
 
-// // JS file lists for application
-// var APP_JS_LISTS = [
-//   APP_JS_PATH + 'jquery-1.11.3.min.js',
-//   APP_JS_PATH + 'vendor_highmaps.js',
-//   APP_JS_PATH + 'moment.js',
-//   APP_JS_PATH + 'material.min.js',
-//   NODE_JS_PATH + 'angular/angular.min.js',
-//   NODE_JS_PATH + 'angular-sanitize/angular-sanitize.min.js',
-//   APP_JS_PATH + 'knayi-myscript.js',
-//   APP_JS_PATH + 'directives/scrolled-handler.js',
-//   APP_JS_PATH + 'app.js',
-//   APP_JS_PATH + 'services/organization.js',
-//   APP_JS_PATH + 'controllers/organization.js',
-//   APP_JS_PATH + 'search.js',
-//   APP_JS_PATH + 'campaign-data.js',
-//   APP_JS_PATH + 'dashboard.js',
-//   APP_JS_PATH + 'eventTracker.js'
-// ];
-
-// // JS file lists for map
-// var MAP_JS_LISTS = [
-//   APP_JS_PATH + 'marker_with_label_packed.js',
-//   APP_JS_PATH + 'marker_clusterer.js',
-//   APP_JS_PATH + 'floods_map.js',
-// ];
-
 // Watch task for gulp
 gulp.task('watch', function () {
   gulp.watch("gulpfile.js", ["scripts"]);
   gulp.watch("./app/assets/js/**/*.js", ['scripts']);
-});
-
-// Script gulp task for production
-gulp.task('scripts-production', function () {
-  Object.keys(PAGES).forEach(function(pagename){
-    var dist = path.join(__dirname, "public/js", pagename);
-    var paths = PAGES[pagename];
-    gulp.src(paths)
-      .pipe(concat('app.min.js'))
-      .pipe(uglify())
-      .pipe(gulp.dest(dist))
-  });
 });
 
 // Script gulp task for developement
@@ -118,4 +80,4 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('default', ['scripts', 'watch']);
-gulp.task('production', ['scripts-production']);
+gulp.task('production', ['scripts']);
