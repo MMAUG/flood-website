@@ -112,7 +112,7 @@ p {
 	font-size: 16px;
 	text-align: center;
 }
-#donation-groups {
+#cards-group {
 	width: 100%;
 	height: 100%;
 }
@@ -121,19 +121,19 @@ p {
 	height: 100%;
 }
 
-#donation-groups .mdl-card__title {
+#cards-group .mdl-card__title {
   -webkit-box-align: start;
   -webkit-align-items: start;
   -ms-flex-align: start;
   align-items: flex-start;
 }
-#donation-groups .mdl-card__title-text {
+#cards-group .mdl-card__title-text {
 	-webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
   font-size: 18px;
 }
-#donation-groups .mdl-card__actions {
+#cards-group .mdl-card__actions {
     display: flex;
     box-sizing:border-box;
     align-items: center;
@@ -148,7 +148,7 @@ p {
 	width: 100%;
 }
 
-#new-donation-groups .mdl-textfield {
+#new-cards-group .mdl-textfield {
 	width: 100%;
 }
 
