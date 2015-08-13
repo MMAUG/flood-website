@@ -36,6 +36,18 @@ var campaigns = [
     "desc" : " ငွေကြေး (၂၅) မျိုးဖြင့် Visa/Master Card နှင့် မိနစ်ပိုင်းအတွင်း လှူဒါန်းနိုင်ပြီး ရရှိလာသော အလှူငွေများအား ကယ်ဆယ်ရေးလုပ်နေသော ဒေသခံအသင်းများ၊ ကွန်ယက်များ၊ အသင်းကြီးများအား တိုက်ရိုက်လှူဒါန်းပေးသွားမည် ဖြစ်ပါသည်၊၊ ",
     "img" : "",
     "link" : "http://ysfmyanmar.org/"
+  },
+  {
+    "title" : "#SaveMyanmar from Cyclone Komen",
+    "desc" : "Our main objective is to assist with local aid groups and NGOs currently helping at those affected areas as well as the rescure operations needed to help those in urgent need of our help! An eye for an eye, these families and children need you; every dollar of your donation will go directly into facilitate them in this diabolical disaster. Your donation will help make a difference so, please donate and no matter how much it is, it will help these Burmese In Need!",
+    "img" : "https://2dbdd5116ffa30a49aa8-c03f075f8191fb4e60e74b907071aee8.ssl.cf1.rackcdn.com/5505224_1438394554.0618_funddescription.jpg",
+    "link" : "http://www.gofundme.com/saveburma"
+  },
+  {
+    "title" : "Facebook : Myanmar Flood Relief",
+    "desc" : "100% of what you give will go to Save the Children and support their humanitarian response for Myanmar. Your donation will help provide urgent, life-saving aid (food, water, shelter materials, first aid kits, household supplies, hygiene kits) and long-term recovery support (including support for livelihoods and food security) for children and their families affected by the Myanmar floods. Facebook will match donations, up to a total of $500,000 USD.",
+    "img" : "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/t31.0-8/11856303_851712148231120_64435114829961478_o.jpg",
+    "link" : "https://www.facebook.com/MyanmarFloodRelief"
   }
 ];
     
