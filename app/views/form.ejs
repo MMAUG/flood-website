@@ -18,34 +18,30 @@
 
           <form action="#" method="POST" id="NewsGroup">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input required="true" class="mdl-textfield__input" type="text" id="title" v-model="title" />
+              <input required="true" class="mdl-textfield__input" type="text" id="title"/>
               <label class="mdl-textfield__label" for="title">Title</label>
             </div>
-            <p class="error" v-if="invalidTitle">Group title is required</p>
             <div class="mdl-textfield mdl-js-textfield">
-              <textarea required="true" v-model="description" class="mdl-textfield__input" type="text"
+              <textarea required="true" class="mdl-textfield__input" type="text"
               rows= "3" id="description" ></textarea>
               <label class="mdl-textfield__label" for="description">Description</label>
             </div>
-            <p class="error" v-if="invalidTitle">Group description is required</p>
             <div class="mdl-textfield mdl-js-textfield">
-              <textarea required="true" v-model="phone_numbers" class="mdl-textfield__input" type="text"
+              <textarea required="true" class="mdl-textfield__input" type="text"
               rows= "3" id="phone_numbers" ></textarea>
               <label class="mdl-textfield__label" for="phone_numbers">Phone Numbers</label>
             </div>
             <div class="mdl-textfield mdl-js-textfield">
-              <textarea required="true" v-model="donation_location" class="mdl-textfield__input" type="text" rows= "3" id="donation_location" ></textarea>
+              <textarea required="true" class="mdl-textfield__input" type="text" rows= "3" id="donation_location" ></textarea>
               <label class="mdl-textfield__label" for="donation_location">Address</label>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input required="true" class="mdl-textfield__input" type="text" id="facebook_url"
-              v-model="facebook_url" />
+              <input required="true" class="mdl-textfield__input" type="text" id="facebook_url"/>
               <label class="mdl-textfield__label" for="facebook_url">Facebook Url</label>
             </div>
 
             <input type="submit" value="Post"
                class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-            <!-- <span v-if="newIsPosting">Posting...</span> -->
           </form>
 
         </div> <!-- end of div#new-donation-groups -->
@@ -74,7 +70,7 @@
       request.fail(function( jqXHR, textStatus ) {
         alert('Error: Please try again to post your donation group...');
       });
-      
+
       return false;
     });
   </script>
