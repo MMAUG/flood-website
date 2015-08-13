@@ -1,0 +1,26 @@
+{
+  "name": "flood-website",
+  "version": "1.0.0",
+  "homepage": "https://github.com/MMAUG/flood-website",
+  "authors": [
+    "Thuya Myo Nyunt <ty@kny.co>"
+  ],
+  "description": "Flood infromation from Myanmar",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.11.x",
+    "angular": "~1.4.x",
+    "angular-sanitize": "~1.4.x",
+    "moment": "~2.10.6",
+    "material-design-lite": "~1.0.2",
+    "highmaps-release": "~1.1.7"
+  }
+}
