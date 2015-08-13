@@ -33,20 +33,31 @@ function jsPath(_path){
   return path.join(__dirname + "/app/assets/js", _path);
 }
 
-function concatDefault(__DEFAULTS){
-  var paths = [].slice.call(arguments, 1).map(jsPath);
+function concatDefault(__DEFAULTS, assets, other){
+  var paths = [];
+  if(assets) paths = assets.map(jsPath);
+  if(other) paths = paths.concat(other);
   return __DEFAULTS.concat(paths);
 }
 
 var PAGES = {
-  "donation": concatDefault(DEFAULT, 'directives/scrolled-handler.js', 
-    'services/organization.js', 'controllers/organization.js'),
-  "news": concatDefault(DEFAULT),
+  "donation": concatDefault(DEFAULT, 
+      ['directives/scrolled-handler.js', 
+      'services/organization.js', 'controllers/organization.js']),
+
+  "news": concatDefault(DEFAULT, 
+      ['directives/scrolled-handler.js',
+      'services/newsfeeds.js', 'controllers/newsfeeds.js']),
+
   "news-form": concatDefault(DEFAULT),
   "form": concatDefault(DEFAULT),
-  "flood-locations-map": concatDefault(DEFAULT),
+
+  "flood-locations-map": concatDefault(DEFAULT, 
+    ['floods_map.js'],
+    [__MARKER_WITH_LABEL, __MARKER_CULSTERER]),
+
   "campaigns": concatDefault(DEFAULT),
-  "about": concatDefault(DEFAULT),
+  "about": concatDefault(DEFAULT)
 };
 
 // // JS file lists for application
