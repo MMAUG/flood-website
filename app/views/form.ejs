@@ -16,7 +16,7 @@
 
         <div id="cards-group" class="mdl-cell mdl-cell--12-col">
 
-          <form action="#" method="POST" id="NewsGroup">
+          <form action="#" method="POST" id="NewGroup">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input required="true" class="mdl-textfield__input" type="text" id="title" 
               name="title" />
@@ -55,7 +55,7 @@
   </div> <!-- end of div.mdl-layout -->
   <% include partials/scripts %>
   <script>
-    $("#NewsGroup").submit(function(event){
+    $("#NewGroup").submit(function(event){
       event.preventDefault();
       var form = $(this); 
 

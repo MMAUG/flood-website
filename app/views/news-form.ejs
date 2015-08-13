@@ -12,22 +12,25 @@
       <section class="section--center mdl-grid" id="main-content">
 
         <div id="new-form" class="mdl-cell mdl-cell--12-col" >
+
           <p id="message-text" class="message-success-text"></p>
           <h3 class="page-title">Post Flood News</h3>
           <div class="new-post-form">
-            <form action="#" method="POST">
+
+            <form action="#" method="POST" id="NewsForm">
+
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label new-input">
-                <input class="mdl-textfield__input" type="text" id="title" />
+                <input class="mdl-textfield__input" type="text" id="title" name="title" />
                 <label class="mdl-textfield__label" for="title">Title</label>
               </div>
-              <p class="error">News title is required</p>
+
               <div class="mdl-textfield mdl-js-textfield new-input">
-                <textarea class="mdl-textfield__input" type="text" rows= "7" id="description" ></textarea>
+                <textarea name="description" class="mdl-textfield__input" type="text" rows= "7" id="description" ></textarea>
                 <label class="mdl-textfield__label" for="description">Description</label>
               </div>
-              <p class="error">News description is required</p>
 
-              <input type="submit" value="Post" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+              <input type="submit" value="Post" 
+                class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
             </form>
           </div>
 
@@ -36,5 +39,30 @@
     </main> <!-- end of #main-container -->
   </div> <!-- end of div.mdl-layout -->
   <% include partials/scripts %>
+  <script>
+  $("#NewsForm").submit(function(event){
+      event.preventDefault();
+      var form = $(this);
+
+      console.log(form.serializeArray());
+
+      var request = $.ajax({
+        url: "https://floodinfo-myanmar.herokuapp.com/api/v2/newsfeeds",
+        method: "POST",
+        data: form.serializeArray(),
+        dataType: "json"
+      });
+       
+      request.done(function( msg ) {
+        document.location = "/";
+      });
+       
+      request.fail(function( jqXHR, textStatus ) {
+        alert('Error: Please try again to post your donation group...');
+      });
+
+      return false;
+    });
+  </script>
 </body>
 </html>
