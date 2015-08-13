@@ -13,53 +13,41 @@
 
       <section class="section--center mdl-grid" id="main-content">
 
-        <div class="mdl-title-box mdl-cell--6-col mdl-cell--12-col-tablet">
+        <div class="mdl-title-box mdl-cell--12-col">
           <h3 class="page-title">News Feeds</h3>
         </div>
 
-        <!-- Filter Serach -->
-        <div class="mdl-title-box mdl-cell--6-col mdl-cell--12-col-tablet filter-container">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable 
-                      mdl-textfield--floating-label mdl-textfield--align-right">
-            <label class="mdl-button mdl-js-button mdl-button--icon"
-                 for="search-at-header">
-              <i class="material-icons">search</i>
-            </label>
-            <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" name="sample" id="search-at-header" />
+        <div id="cards-group" ng-controller="NewsFeedCtrl">
+
+          <div class="mdl-grid" id="scrolled-area" scrolled-handler="nextPage()" scrolled-container="#main-container" scrolled-content="#main-content">
+
+            <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp" 
+                ng-repeat="news in newsfeeds">
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text" ng-bind-html="news.title"></h2>
+              </div> <!-- end of div.mdl-card__title -->
+
+              <div class="mdl-card__supporting-text">
+                <p ng-bind-html="news.description"></p>
+              </div> <!-- end of div.mdl-card__supporting-text -->
+              <div class="mdl-card__actions mdl-card--border">
+                <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                  ng-click="reportNews($index)">
+                  Report this news
+                </button>
+                <span class="mdl-card__time" ng-bind-html="{{ news.time | moment }}"></span>
+              </div>
+            </div> <!-- end of div.mdl-card -->
+
+
+            <div id="loading" ng-show="loading">
+              <svg class="circular">
+                <circle class="path" cx="50" cy="50" r="20" 
+                  fill="none" stroke-width="2" stroke-miterlimit="10"/>
+              </svg>
             </div>
           </div>
-        </div>
-
-        <div id="new-feed" class="mdl-cell mdl-cell--12-col" >
-
-          <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp" v-repeat="news" data-search="{{ title | lowercase }} : {{ description | lowercase }}">
-            <div class="mdl-card__title">
-              <h2 class="mdl-card__title-text"> {{ title }} </h2>
-            </div> <!-- end of div.mdl-card__title -->
-            <div class="mdl-card__supporting-text">
-              <p v-html="description"></p>
-            </div> <!-- end of div.mdl-card__supporting-text -->
-            <div class="mdl-card__actions mdl-card--border">
-              <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-              v-on="click : reportNew(id)">
-                Report this news
-              </button>
-              <span class="mdl-card__time"> {{ posted_time | moment }} </span>
-            </div>
-          </div> <!-- end of div.mdl-card -->
-
-          <!-- Show loading text and hide after data are ready -->
-          <div id="loading" v-if="loading">
-            <!-- http://codepen.io/jczimm/pen/vEBpoL -->
-            <svg class="circular">
-              <circle class="path" cx="50" cy="50" r="20" 
-                fill="none" stroke-width="2" stroke-miterlimit="10"/>
-            </svg>
-          </div>
-
         </div> <!-- end of div#donation-groups -->
-
       </section> <!-- end of section#main-content -->
 
     </main> <!-- end of #main-container -->
