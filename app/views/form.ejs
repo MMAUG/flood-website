@@ -18,30 +18,33 @@
 
           <form action="#" method="POST" id="NewsGroup">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input required="true" class="mdl-textfield__input" type="text" id="title"/>
+              <input required="true" class="mdl-textfield__input" type="text" id="title" 
+              name="title" />
               <label class="mdl-textfield__label" for="title">Title</label>
             </div>
             <div class="mdl-textfield mdl-js-textfield">
-              <textarea required="true" class="mdl-textfield__input" type="text"
+              <textarea required="true" name="description" class="mdl-textfield__input" type="text"
               rows= "3" id="description" ></textarea>
               <label class="mdl-textfield__label" for="description">Description</label>
             </div>
             <div class="mdl-textfield mdl-js-textfield">
-              <textarea required="true" class="mdl-textfield__input" type="text"
+              <textarea required="true" name="phone_numbers" class="mdl-textfield__input" type="text"
               rows= "3" id="phone_numbers" ></textarea>
               <label class="mdl-textfield__label" for="phone_numbers">Phone Numbers</label>
             </div>
             <div class="mdl-textfield mdl-js-textfield">
-              <textarea required="true" class="mdl-textfield__input" type="text" rows= "3" id="donation_location" ></textarea>
+              <textarea required="true" name="donation_location" class="mdl-textfield__input" type="text" rows= "3" id="donation_location" ></textarea>
               <label class="mdl-textfield__label" for="donation_location">Address</label>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input required="true" class="mdl-textfield__input" type="text" id="facebook_url"/>
+              <input required="true" class="mdl-textfield__input" type="text" id="facebook_url"
+              name="facebook_url" />
               <label class="mdl-textfield__label" for="facebook_url">Facebook Url</label>
             </div>
 
             <input type="submit" value="Post"
                class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+            <!-- <span v-if="newIsPosting">Posting...</span> -->
           </form>
 
         </div> <!-- end of div#new-donation-groups -->
