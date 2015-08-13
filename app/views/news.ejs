@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="MyanmarFlood">
 <% include partials/head %>
 <body class="news" data-page="news">
   <div class="mdl-layout mdl-js-layout">
@@ -17,7 +17,7 @@
           <h3 class="page-title">News Feeds</h3>
         </div>
 
-        <div id="cards-group" ng-controller="NewsFeedCtrl">
+        <div id="cards-group" ng-controller="NewsFeedsCtrl">
 
           <div class="mdl-grid" id="scrolled-area" scrolled-handler="nextPage()" scrolled-container="#main-container" scrolled-content="#main-content">
 
@@ -35,7 +35,7 @@
                   ng-click="reportNews($index)">
                   Report this news
                 </button>
-                <span class="mdl-card__time" ng-bind-html="{{ news.time | moment }}"></span>
+                <span class="mdl-card__time">{{ news.posted_time|moment }}</span>
               </div>
             </div> <!-- end of div.mdl-card -->
 
