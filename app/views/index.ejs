@@ -10,25 +10,11 @@
 
       <section class="section--center mdl-grid" id="main-content">
 
-        <div class="mdl-title-box mdl-cell--6-col mdl-cell--12-col-tablet">
+        <div class="mdl-title-box mdl-cell--12-col">
           <h3 class="page-title">Donation Group Lists</h3>
         </div>
 
-        <!-- Filter Serach -->
-        <div class="mdl-title-box mdl-cell--6-col mdl-cell--12-col-tablet filter-container">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-                      mdl-textfield--floating-label mdl-textfield--align-right">
-            <label class="mdl-button mdl-js-button mdl-button--icon"
-                 for="search-at-header">
-              <i class="material-icons">search</i>
-            </label>
-            <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" name="sample" id="search-at-header" />
-            </div>
-          </div>
-        </div>
-
-        <div id="donation-groups" ng-controller="OrganizationCtrl">
+        <div id="cards-group" ng-controller="OrganizationCtrl">
 
           <div class="mdl-grid" id="scrolled-area" scrolled-handler="nextPage()" scrolled-container="#main-container" scrolled-content="#main-content">
 
@@ -52,13 +38,12 @@
                 <div class="mdl-layout-spacer"></div>
 
                 <button class="mdl-button mdl-js-button show-info"
-                        ng-click="showDetailBox($index)">
+                  ng-click="showDetailBox($index)">
                   Detail
                 </button>
               </div> <!-- end of div.mdl-card__actions -->
             </div> <!-- end of div.mdl-card -->
 
-            <!-- Show loading text and hide after data are ready -->
             <div id="loading" ng-show="loading">
               <svg class="circular">
                 <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
