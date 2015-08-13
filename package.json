@@ -1,10 +1,10 @@
 {
   "name": "flood-info",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Flood infromation from Myanmar",
   "main": "index.js",
   "scripts": {
-    "postinstall": "gulp production && bower install",
+    "postinstall": "bower install && gulp production",
     "start": "nodemon bin/www.js",
     "test": "mocha"
   },
