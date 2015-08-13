@@ -8,7 +8,7 @@ angular.module('MyanmarFlood')
 		}
 	}
 }])
-.factory('Modalbox', function ($http, API_URL) {
+.factory('Modalbox', function () {
   return {}
 });
 

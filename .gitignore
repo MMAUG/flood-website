@@ -27,4 +27,7 @@ build/Release
 node_modules
 .tmp
 
+# Bower
+bower_components
+
 public/js/*
