@@ -78,6 +78,17 @@ gulp.task('scripts', function () {
       .pipe(gulp.dest(dist))
   });
 });
+gulp.task('scripts-production', function () {
+  Object.keys(PAGES).forEach(function(pagename){
+    var dist = path.join(__dirname, "public/js", pagename);
+    var paths = PAGES[pagename];
+    console.log(pagename, dist, paths);
+    gulp.src(paths)
+      .pipe(concat('app.min.js'))
+      .pipe(uglify({mangle:false}))
+      .pipe(gulp.dest(dist))
+  });
+});
 
 gulp.task('default', ['scripts', 'watch']);
-gulp.task('production', ['scripts']);
+gulp.task('production', ['scripts-production']);
