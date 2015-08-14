@@ -70,7 +70,10 @@ angular.module('MyanmarFlood')
 .controller('ModalboxCtrl', ['$scope', '$rootScope', 'Modalbox', function ($scope, $rootScope, Modalbox) {
 
   $scope.closeBox = function(){
-    $rootScope.box.show = null;
+    $rootScope.box.show = false;
+    $rootScope.box.description = null;
+    $rootScope.box.phone_numbers = null;
+    $rootScope.box.donation_location = null;
   }
 
 }]);
