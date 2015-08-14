@@ -16,10 +16,16 @@ Development
 -----------
 
 Insatll `nodejs` and `npm` first
-After that install gulp
+After that install gulp and bower
 
 ```bash
-$ npm install gulp -g
+$ npm install -g gulp bower
+```
+
+Install frontend components with bower
+
+```bash
+bower install
 ```
 
 Run gulp, it will watch file changes
