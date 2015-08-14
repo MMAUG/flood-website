@@ -79,4 +79,4 @@
                             
 # TECHNOLOGY COLOPHON
 
-  HTML5, CSS3, VueJs, jQuery, Moment, Kanyi, Material Design Lite, Google Map, Google Analytics
+  HTML5, CSS3, AngularJS, jQuery, Moment, Kanyi, Material Design Lite, Google Map, Google Analytics
